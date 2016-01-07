@@ -1,1 +1,0 @@
-# A script postprocessing the PseudoPotential files to keep updated tables of their content
