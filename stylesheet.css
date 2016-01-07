@@ -1,0 +1,237 @@
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+
+    background-color: #666666;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;    
+}
+
+a:link {
+    color: #4466dd;
+}
+
+a:visited {
+    color: #2244bb;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.periodic_table {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 72%;
+    height: 63%;
+
+    background-color: transparent;
+}
+
+.lantact_table {
+    position: absolute;
+    top: 77%;
+    left: 5%;
+    width: 52%;
+    height: 18%;
+
+    background-color: transparent;
+}
+
+.table {
+    display: table;
+    table-layout: fixed;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    position: relative;
+    display: table-cell;
+}
+
+.elem_mendv {
+
+    position: absolute;
+
+    top: 3%;
+    left: 3%;
+    width: 94%;
+    height: 94%;
+
+    color: #000000;
+    background-color: rgba(240, 240, 255, 0.6);
+    font-family: sans-serif;
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.elem_mendv:hover {
+    background-color: rgba(240, 240, 255, 0.9);    
+}
+
+.elem_symbol {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 45%;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.elem_name {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    font-family: serif;
+
+    font-size: 10px;
+}
+
+.elem_number {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    width: 45%;
+    height: 25%;
+    text-align: left;
+
+    font-size: 10px;
+}
+
+.elem_weight {
+    position: absolute;
+    top: 75%;
+    right: 5%;
+    width: 45%;
+    height: 25%;
+
+    font-size: 10px;
+}
+
+.info_box {
+
+    position: absolute;
+
+    top: 10%;
+    right: 2%;
+    width: 18%;
+    height: 80%;
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-style: solid;
+    border-width: 5pt;
+    border-color: #000000;
+}
+
+.info_box .info_name {
+
+    position: relative;
+
+    text-align: center;
+    margin: 15px;
+
+    font-size: 30pt;
+    font-weight: bold;
+
+}
+
+.info_box .info_main {
+
+    text-align: left;
+    margin: 15px;
+}
+
+.info_box .info_pspot, .info_box .info_nopspot {
+
+    text-align: left;
+    margin: 15px;
+}
+
+.info_box .info_nopspot {
+    color: #bb0000;
+}
+
+.divbutton {
+    position: relative;
+
+    left: 25%;
+    width: 50%;
+
+    text-align: center;
+
+    background-color: #999999;
+    border: 1px solid #dddddd;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.divbutton:hover {
+    background-color: #dddddd;
+}
+
+.dark_screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    visibility: hidden;
+}
+
+.white_box {
+    position: fixed;
+    top: 0;
+    left: 15%;
+    width: 70%;
+    height: 100%;
+    z-index: 2;
+
+    background-color: #ffffff;
+    overflow-y: scroll;
+
+}
+
+.pspot_list_table {
+    position: absolute;
+
+    top: 5%;
+    left: 5%;
+    width: 90%;
+
+    border-collapse: collapse;
+
+}
+
+.pspot_list_table thead {
+    font-weight: bold;
+}
+
+.pspot_list_table td {
+    height: 20pt;
+    font-size: 15pt;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border-style: solid;
+
+}
