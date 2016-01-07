@@ -1,0 +1,91 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" encoding="UTF-8">
+
+<html>
+    <head>
+        <!-- CSS stylesheets -->
+        <link href="stylesheet.css" rel="stylesheet">
+
+        <!-- JS Libraries -->
+        <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+        <script src="lib/d3/d3.min.js"></script>
+
+        <!-- Source code files -->
+        <script src="js/periodic_table.js"></script>
+        <script src="js/resizing.js"></script>
+        <script src="js/info_box.js"></script>
+        <script src="js/pspot_list.js"></script>
+
+    </head>
+    <body>
+        <div class="periodic_table"></div>
+        <div class="lantact_table"></div>
+
+        <div class="info_box">
+            <span class="info_name">Element</span>
+            <div>
+                <div class="info_main">
+                    <b>Symbol:</b> <span class="info_symbol"></span><br>
+                    <b>Group:</b> <span class="info_group"></span><br>
+                    <b>Electronic config.:</b> <span class="info_elstate"></span><br>
+                    <b>Bond type:</b> <span class="info_bond"></span><br>                
+                </div>
+                <div class="info_pspot">
+                    <b>Default:</b><br>
+                    <span class="info_pspot_default"></span>
+                    <br>
+                    <br>
+                    <div class="pspot_list_show divbutton">Show all</div>
+                </div>
+                <div class="info_nopspot">
+                    No pseudopotential files available for this element.
+                </div>
+            </div>  
+        </div>
+
+        <div class="dark_screen">
+            <div class="white_box" onclick="(function(e) {e.stopPropagation();})(event)">
+                <table class="pspot_list_table">
+                    <thead>
+                        <tr><td>Pseudopotential name</td><td>Cutoff (eV, FINE quality)</td><td>XC functional</td></tr>
+                    </thead>
+                    <tbody>                     
+                        <tr><td><a href="test.html">Test</a></td><td>300</td><td>LDA</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+        var mendvTable;
+        var iBox;
+        var ppList;
+        var pspot_files;
+        var periodic_table;
+
+        $(document).ready(function() {
+
+            // First load all the important data
+            $.when(
+                $.getJSON("list_potentials.php", function(data) {
+                    pspot_files = data;
+                    window.sessionStorage.setItem("pspot_files", JSON.stringify(data));
+                    console.log("Pseudopotential file list loaded");                    
+                }),
+                $.getJSON("data/periodic_table/data_tabulated.json", function(data) {
+                    periodic_table = data;
+                    window.sessionStorage.setItem("periodic_table", JSON.stringify(data));
+                })
+            ).then(function() {
+                // Initialize the info box
+                iBox = new InfoBox();
+                // When everything is ready, initialize the table, then everything else
+                mendvTable = new MendvTable(periodic_table, iBox);
+                ppList = new PsPotList();
+                resize_all();            
+            });
+        });
+
+        </script>
+    </body>
+</html>
