@@ -1,69 +1,81 @@
-# A class to parse USP pseudopotentials
+# Definition of a class for parsing USP PSPOT files headers
 
 import re
 import os
 
 class USPppot:
 
-    def __init__(self, fname):
+	def __init__(self, fname):
 
-        # Load the file
-        f = open(fname).read()
+		""" Initialize the object
 
-        # Pick comment block
-        try:
-            start_i = f.index("START COMMENT")
-            end_i = f.index("END COMMENT")
-        except ValueError:
-            raise ValueError("File {0} is not in correct USP format or "
-                             "is corrupted".format(fname))
+		fname [string] - path to the file containing the pseudopotential
 
-        comment_block = f[start_i:end_i].split('\n')[1:]
+		"""
 
-        # Now to parse stuff
-        self.cutoffs = {}
-        self.el = None
-        self.xc = None
-        self.pspots = None
+		f = open(fname)
+		lines = f.readlines()
 
-        # Regular expressions
-        cut_re = re.compile("([0-9\.]+)[\s]+(COARSE|MEDIUM|FINE|EXTREME)")
-        elxc_re = re.compile("Element:[\s]+([A-Za-z]+)[\s]+Ionic charge:[\s]+[0-9\.]+[\s]+Level of theory:[\s]+([A-Za-z0-9]+)")
-        def is_dashline(s):
-            s = s.strip()
-            return s == len(s)*'-'
-        pspots_re = re.compile("\"([|0-9A-Za-z\.:()=]+)\"")
+		self.name = os.path.splitext(os.path.basename(fname))[0]
 
-        for l_i, l in enumerate(comment_block):
+		try:
+			start_i = lines.index("START COMMENT\n")
+			end_i = lines.index("END COMMENT\n")
+		except ValueError:
+			raise ValueError("PSPOT file {0} is not in correct USP format".format(fname))
 
-            cut_match = cut_re.findall(l)
-            for m in cut_match:
-                try:
-                    self.cutoffs[m[1]] = float(m[0])
-                except ValueError:
-                    raise ValueError("File {0} is not in correct USP format "
-                                     "or is corrupted".format(fname))
+		comment_block = lines[start_i+1:end_i]
 
-            if self.el is None:
-                elxc_match = elxc_re.findall(l)
-                if len(elxc_match) > 0:
-                    self.el = elxc_match[0][0]
-                    self.xc = elxc_match[0][1]
+		# Now grab the actually useful stuff
+		self.cutoffs = {'COARSE': 0,
+						'MEDIUM': 0,
+						'FINE': 0,
+						'EXTREME': 0}
 
-            if self.pspots is None and l_i < len(comment_block)-2:
-                if is_dashline(l) and is_dashline(comment_block[l_i+2]):
-                    # Then the next one might be it
-                    pspots_match = pspots_re.findall(comment_block[l_i+1])
-                    if len(pspots_match) > 0:
-                        self.pspots = pspots_match[0]
+		for c in self.cutoffs:
+			cre = re.compile('([0-9\.]+)[\s]+'+c)
+			for l in comment_block:
+				res = cre.findall(l)
+				if len(res) > 0:
+					# Found it!
+					try:
+						self.cutoffs[c] = float(res[0])
+					except ValueError:
+						raise ValueError("PSPOT file {0} is corrupted".format(fname))
+					break
 
-        if self.el is None or self.pspots is None:
-            raise ValueError("File {0} is not in correct USP format "
-                             "or is corrupted".format(fname))
-            
+		# Then find the element and the XC functional
+		elre = re.compile("Element:[\s]+([A-Za-z]+) ")
+		xcre = re.compile("Level of theory:[\s]+([A-Za-z]+) ")
 
+		self.el = None
+		self.xc = None
 
+		for l in comment_block:
+			res = elre.findall(l)
+			if len(res) > 0:
+				self.el = res[0]
+				res = xcre.findall(l)
+				if len(res) == 0:
+					raise ValueError("PSPOT file {0} is corrupted".format(fname))
+				self.xc = res[0]
+				break
 
+		if self.el is None:
+			raise ValueError("PSPOT file {0} is corrupted".format(fname))
 
+		# Finally, the pseudpotential string. This is a bit harder to identify
+		pspotsre = re.compile("\"([0-9a-zA-Z\.:|()=]+)\"")
+		def is_dash(s):
+			s = s.strip()
+			return s == len(s)*'-'
 
-
+		for i, l in enumerate(comment_block[1:-1]):
+			# Is the block in between two dash-only lines?
+			if is_dash(comment_block[i]) and is_dash(comment_block[i+2]):
+				# Then we're onto something!
+				res = pspotsre.findall(l)
+				if len(res) == 0:
+					raise ValueError("PSPOT file {0} is corrupted".format(fname))
+				self.pspots = res[0]
+				break
