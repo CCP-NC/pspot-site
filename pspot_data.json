@@ -1,0 +1,106 @@
+{
+  "H": {
+    "default": {
+      "cutoffs": {
+        "MEDIUM": 163.0, 
+        "FINE": 218.0, 
+        "COARSE": 54.0, 
+        "EXTREME": 348.0
+      }, 
+      "name": "H_OTF", 
+      "xc": "LDA", 
+      "elem": "H", 
+      "ppot_string": "1|0.8|0.8|0.6|2|6|8|10(qc=6)", 
+      "file": "H_OTF.usp", 
+      "path": "data/pspot/H_OTF.usp"
+    }, 
+    "H_OTF": {
+      "cutoffs": {
+        "MEDIUM": 163.0, 
+        "FINE": 218.0, 
+        "COARSE": 54.0, 
+        "EXTREME": 348.0
+      }, 
+      "name": "H_OTF", 
+      "xc": "LDA", 
+      "elem": "H", 
+      "ppot_string": "1|0.8|0.8|0.6|2|6|8|10(qc=6)", 
+      "file": "H_OTF.usp", 
+      "path": "data/pspot/H_OTF.usp"
+    }
+  }, 
+  "C": {
+    "default": {
+      "cutoffs": {
+        "MEDIUM": 272.0, 
+        "FINE": 327.0, 
+        "COARSE": 163.0, 
+        "EXTREME": 522.0
+      }, 
+      "name": "C_OTF", 
+      "xc": "LDA", 
+      "elem": "C", 
+      "ppot_string": "2|1.4|1.4|1.3|6|10|12|20:21(qc=6)", 
+      "file": "C_OTF.usp", 
+      "path": "data/pspot/C_OTF.usp"
+    }, 
+    "C_dummy": {
+      "cutoffs": {
+        "MEDIUM": 272.0, 
+        "FINE": 327.0, 
+        "COARSE": 163.0, 
+        "EXTREME": 522.0
+      }, 
+      "name": "C_dummy", 
+      "xc": "LDA", 
+      "elem": "C", 
+      "ppot_string": "2|1.4|1.4|1.3|6|10|12|20:21(qc=6)", 
+      "file": "C_dummy.usp", 
+      "path": "data/pspot/C_dummy.usp"
+    }, 
+    "C_OTF": {
+      "cutoffs": {
+        "MEDIUM": 272.0, 
+        "FINE": 327.0, 
+        "COARSE": 163.0, 
+        "EXTREME": 522.0
+      }, 
+      "name": "C_OTF", 
+      "xc": "LDA", 
+      "elem": "C", 
+      "ppot_string": "2|1.4|1.4|1.3|6|10|12|20:21(qc=6)", 
+      "file": "C_OTF.usp", 
+      "path": "data/pspot/C_OTF.usp"
+    }
+  }, 
+  "O": {
+    "default": {
+      "cutoffs": {
+        "MEDIUM": 435.0, 
+        "FINE": 490.0, 
+        "COARSE": 354.0, 
+        "EXTREME": 784.0
+      }, 
+      "name": "O_OTF", 
+      "xc": "LDA", 
+      "elem": "O", 
+      "ppot_string": "2|1.0|1.3|0.7|13|16|18|20:21(qc=7)", 
+      "file": "O_OTF.usp", 
+      "path": "data/pspot/O_OTF.usp"
+    }, 
+    "O_OTF": {
+      "cutoffs": {
+        "MEDIUM": 435.0, 
+        "FINE": 490.0, 
+        "COARSE": 354.0, 
+        "EXTREME": 784.0
+      }, 
+      "name": "O_OTF", 
+      "xc": "LDA", 
+      "elem": "O", 
+      "ppot_string": "2|1.0|1.3|0.7|13|16|18|20:21(qc=7)", 
+      "file": "O_OTF.usp", 
+      "path": "data/pspot/O_OTF.usp"
+    }
+  }
+}

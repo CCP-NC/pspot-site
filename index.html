@@ -15,8 +15,16 @@
         <script src="js/info_box.js"></script>
         <script src="js/pspot_list.js"></script>
 
+        <!-- Useful snippets -->
+        <script>
+            function pspot_url(pspot) {
+                return "pspot.html?pspot=" + pspot.file + "&el=" + pspot.elem;
+            }
+        </script>
+
     </head>
-    <body>
+    <body class="dark">
+
         <div class="periodic_table"></div>
         <div class="lantact_table"></div>
 
@@ -67,7 +75,7 @@
 
             // First load all the important data
             $.when(
-                $.getJSON("list_potentials.php", function(data) {
+                $.getJSON("pspot_data.json", function(data) {
                     pspot_files = data;
                     window.sessionStorage.setItem("pspot_files", JSON.stringify(data));
                     console.log("Pseudopotential file list loaded");                    

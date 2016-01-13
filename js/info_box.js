@@ -16,7 +16,7 @@ InfoBox = function() {
         // Now check if there are any pseudopotentials
         if (el.symbol in pspot_files) {
 
-            var pspot_page_link = $("<a>").attr("href", "pspot.html?=" + pspot_files[el.symbol].default.file)
+            var pspot_page_link = $("<a>").attr("href", pspot_url(pspot_files[el.symbol].default))
                                           .html(pspot_files[el.symbol].default.file);
             this.ibox.find('.info_pspot_default').html('').append(pspot_page_link);
 
