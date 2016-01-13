@@ -4,8 +4,14 @@ body {
     height: 100%;
     margin: 0;
     border: 0;
+}
 
+body.dark {
     background-color: #666666;
+}
+
+body.light {
+    background-color: #dddddd;
 }
 
 a {
@@ -234,4 +240,37 @@ a:hover {
 
     border-style: solid;
 
+}
+
+.pspot_main_plot_jpg {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.pspot_plotbox {
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    display: table-cell;
+
+    background-color: #ff0000;
+}
+
+.pspot_infobox {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left: 70%;
+
+    background-color: #00ff00;
+}
+
+.pspot_plotbox > * {
+    vertical-align: middle;
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd" encoding="UTF-8">
+
+<html>
+    <head>   
+        <!-- CSS stylesheets -->
+        <link href="stylesheet.css" rel="stylesheet">
+
+        <!-- JS Libraries -->
+        <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+        <script src="lib/d3/d3.min.js"></script>
+
+        <!-- Source code files -->
+        <script src="js/url_params.js"></script>
+    </head>
+    <body class="light">
+
+        <div class="pspot_plotbox">
+            <img class="pspot_main_plot_jpg" src="graphs/C_OTF/beta.jpg"></img>
+        </div>
+        <div class="pspot_infobox">
+        </div>
+
+    	<script>
+
+    		$(document).ready(function() {
+    			// Let's load the specific pseudopotential
+    			$("#test").html(urlParams()['pspot']);
+    		})
+
+    	</script>
+    </body>
+</html>	

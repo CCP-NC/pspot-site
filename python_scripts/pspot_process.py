@@ -55,7 +55,7 @@ def parse_agrfile(fname):
     propline_re = re.compile('@[\s]+([\w\s]+)[\s]+([\+\-0-9\.]+|"[^"]*"|off|on)')
     targline_re = re.compile('@target[\s]+[gG]([0-9]+)\.[sS]([0-9]+)')
     typeline_re = re.compile('@type[\s]+xy')
-    dataline_re = re.compile('[\s]*([0-9eE\-\.]+)[\s]+([0-9eE\-\.]+)')
+    dataline_re = re.compile('[\s]*([0-9eE\-\+\.]+)[\s]+([0-9eE\-\+\.]+)')
 
     current_with = None
     current_target = None
@@ -130,7 +130,8 @@ def parse_betaproj(ppot):
 # Parsing command line arguments
 
 parser = ap.ArgumentParser()
-parser.add_argument('-plot', action='store_true', default=True, help="Run castep and generate PSPOT plots")
+parser.add_argument('-noplot', action='store_true', default=False, help="Do not generate PSPOT plots")
+parser.add_argument('-nocastep', action='store_true', default=False, help="Do not run CASTEP, use existing files if present")
 
 args = parser.parse_args()
 
@@ -166,7 +167,7 @@ except IOError:
 
 # Now start by building a full table of all pseudopotential files
 
-pspot_file_list = glob.glob(os.path.join(config['main_relpath'], config['pspot_path'], '*.' + config['pspot_extension']))
+pspot_file_list = glob.glob(os.path.join(main_abspath, config['pspot_path'], '*.' + config['pspot_extension']))
 pspot_list = []
 pspot_info_dict = {}
 
@@ -186,10 +187,12 @@ for f_i, fname in enumerate(pspot_file_list):
         sys.stderr.write("The name 'default' is reserved and can not be used for a pseudopotential file. Skipping...\n")
         continue
 
-    if ppot.el not in pspot_list:
+    if ppot.el not in pspot_info_dict:
         pspot_info_dict[ppot.el] = {'default': None}
 
     ppot_info = {'name': ppot.name,
+                 'file': os.path.basename(fname),
+                 'elem': ppot.el,
                  'path': os.path.join(config['pspot_path'], os.path.basename(fname)),
                  'cutoffs': ppot.cutoffs,
                  'xc': ppot.xc,
@@ -204,11 +207,15 @@ for f_i, fname in enumerate(pspot_file_list):
 
     pspot_list.append(ppot)
 
-# Now generate the appropriate plots
-if args.plot and cell_template is not None:
+# Now save the entire dictionary as JSON
+json.dump(pspot_info_dict, open(os.path.join(main_abspath, 'pspot_data.json'), 'w'), indent=2)
 
-    # Clear the folder
-    clear_folder(os.path.join(main_abspath, config['graph_path']))
+# Now generate the appropriate plots
+if not args.noplot and cell_template is not None:
+
+    if not args.nocastep:
+        # Clear the folder
+        clear_folder(os.path.join(main_abspath, config['graph_path']))
 
     agr_extensions = ['beta', 'econv', 'pwave']
 
@@ -218,22 +225,28 @@ if args.plot and cell_template is not None:
 
         # Time to make graphs! First run CASTEP, then actually plot stuff
 
-        sys.stdout.write("Running CASTEP calculation\n")
-        run_castep_calc(ppot)
+        if not args.nocastep:
+            sys.stdout.write("Running CASTEP calculation\n")
+            run_castep_calc(ppot)
         sys.stdout.write("Plotting graphs\n")
-        dirname = os.path.join(main_abspath, config['graph_path'], ppot.name)        
+        dirname = os.path.join(main_abspath, config['graph_path'], ppot.name)
+
         for ext in agr_extensions:
             fname = os.path.join(dirname, ppot.el+'_OTF.'+ext)
             try:
                 agr_obj = parse_agrfile(fname)
             except IOError:
                 sys.stderr.write("Could not parse {0} file for pseudopotential {1}\n".format(ext, ppot.name))
+                continue
 
             # Now dump it as json file
-            json.dump(agr_obj, open(os.path.join(dirname, ext + '.json'), 'w'))
+            json.dump(agr_obj, open(os.path.join(dirname, ext + '.json'), 'w'), indent=2)
             # Also create an SVG with Grace for good measure
             try:
-                xmgrace_run = subprocess.Popen(['xmgrace', fname, '-hdevice', 'SVG', '-hardcopy', '-printfile', os.path.join(dirname, ext+'.svg')])
+                xmgrace_run = subprocess.Popen(['xmgrace', fname, '-hdevice', 
+                                                'JPEG', '-hardcopy',
+                                                '-printfile', os.path.join(dirname, ext+'.jpg'),
+                                                '-fixed', '1024', '768'])
                 xmgrace_run.wait()
             except OSError:
-                sys.stderr.write("Grace not installed, SVG plots can not be generated\n")
+                sys.stderr.write("Grace not installed, PNG plots can not be generated\n")

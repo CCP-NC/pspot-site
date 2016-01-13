@@ -7,8 +7,8 @@ PsPotList = function(visible) {
 	function pspot_row(pspot) {
 
 		var row = $("<tr>");
-		var link = $("<td>").append($("<a>").html(pspot.file).attr('href', "pspot.html?=" + pspot.file));
-		var cutoff = $("<td>").html(pspot.cutoff);
+		var link = $("<td>").append($("<a>").html(pspot.file).attr('href', pspot_url(pspot)));
+		var cutoff = $("<td>").html(pspot.cutoffs.FINE);
 		var xcfunc = $("<td>").html(pspot.xc);
 
 		return row.append(link).append(cutoff).append(xcfunc);
@@ -24,11 +24,11 @@ PsPotList = function(visible) {
 
 	this.compile = function(el) {
 		// Compile the list for the given element
-		var i = 0;
 		this.tbody.html('');
-		while (i in pspot_files[el]) {
-			this.tbody.append(pspot_row(pspot_files[el][i]));
-			i++;
+		for (var ppot in pspot_files[el]) {
+			if (ppot == 'default')
+				continue;
+			this.tbody.append(pspot_row(pspot_files[el][ppot]));
 		}
 	}
 
