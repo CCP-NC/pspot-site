@@ -11,21 +11,79 @@
 
         <!-- Source code files -->
         <script src="js/url_params.js"></script>
+        <script src="js/pspot_page.js"></script>
     </head>
     <body class="light">
 
         <div class="pspot_plotbox">
-            <img class="pspot_main_plot_jpg" src="graphs/C_OTF/beta.jpg"></img>
+
+            <img class="pspot_main_plot" id="pspot_plot_jpg" src="graphs/C_OTF/beta.jpg">
+            </img>
+
+            <svg class="pspot_main_plot" id="pspot_plot_svg">
+            </svg>
+
         </div>
+
         <div class="pspot_infobox">
+            <div class="info_name">
+                PSPOT.usp
+            </div>
+            <div class="info_element">
+                Element
+            </div>
+            <div class="info_main">
+                <ul>
+                    <li><span class="li_header">Cutoffs:</span>
+                        <table>
+                            <tr class="tr_header">
+                                <td>COARSE</td>
+                                <td>MEDIUM</td>
+                                <td>FINE</td>
+                                <td>EXTREME</td>
+                            </tr>
+                            <tr>
+                                <td id="cut_val_coarse">0</td>
+                                <td id="cut_val_medium">0</td>
+                                <td id="cut_val_fine">0</td>
+                                <td id="cut_val_extreme">0</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li><span class="li_header">Pseudopotential string:</span><br>
+                        <span id="pspot_line">Test</span>
+                    </li>
+                    <li>
+                        <span class="li_header">Plot type:</span>
+                        <select id="plot_type_select">
+                            <option value="static">Static plots</option>
+                            <option value="interactive">Interactive plots</option>
+                        </select>
+                    </li>
+                    <li>
+                        <span class="li_header">Plotted data:</span>
+                        <select id="plot_data_select">
+                            <option value="beta">Beta projectors</option>
+                            <option value="econv">Energy convergence</option>
+                            <option value="pwave">P Wave</option>
+                        </select>
+                    </li>
+
+            </div>
+            <!-- This one acts as a link -->
+            <a class="back_button" href="index.html">
+                &lt; Back
+            </a>
         </div>
 
     	<script>
 
+            var pPage;
+
     		$(document).ready(function() {
     			// Let's load the specific pseudopotential
-    			$("#test").html(urlParams()['pspot']);
-    		})
+                pPage = new PspotPage();
+    		});
 
     	</script>
     </body>

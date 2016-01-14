@@ -242,7 +242,7 @@ a:hover {
 
 }
 
-.pspot_main_plot_jpg {
+.pspot_main_plot {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
@@ -253,13 +253,21 @@ a:hover {
     margin: auto;
 }
 
+.pspot_plot_jpg {
+    display: inline;
+}
+
+.pspot_plot_svg {
+    display: none;
+}
+
 .pspot_plotbox {
     position: absolute;
     width: 70%;
     height: 100%;
     display: table-cell;
 
-    background-color: #ff0000;
+    background-color: #cccccc;
 }
 
 .pspot_infobox {
@@ -268,9 +276,90 @@ a:hover {
     height: 100%;
     left: 70%;
 
-    background-color: #00ff00;
+    background-color: #eeeeee;
 }
 
 .pspot_plotbox > * {
     vertical-align: middle;
+}
+
+.pspot_infobox .info_name {
+
+    font-weight: bold;
+    font-size: 40pt;
+
+    text-align: center;
+
+    margin: 20px;
+}
+
+.pspot_infobox .info_element {
+
+    font-weight: bold;
+    font-size: 30pt;
+
+    text-align: center;
+
+    margin: 10px;
+}
+
+.pspot_infobox .info_main {
+    font-size: 14pt;
+    margin: 20px;
+}
+
+.info_main dl {
+    font-size: 13pt;
+}
+
+.info_main table {
+    text-align: center;
+    vertical-align: middle;
+
+    border: solid 2px #000000;
+    border-collapse: collapse;
+
+    margin: 5pt;
+}
+
+.info_main td {
+    padding: 5pt;
+    border: solid 1px #333333;
+}
+
+.info_main li {
+    padding: 5pt;
+}
+
+.info_main .tr_header {
+    font-weight: bold;
+}
+
+.info_main .li_header {
+    font-weight: bold;
+}
+
+.back_button {
+
+    display: block;
+
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 10px;
+
+    font-weight: bold;
+    font-size: 16pt;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    color: #000000;
+    background-color: #cccccc;
+}
+
+.back_button:hover {
+    background-color: #dddddd;
+    text-decoration: none;
 }

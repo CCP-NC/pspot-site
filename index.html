@@ -18,7 +18,7 @@
         <!-- Useful snippets -->
         <script>
             function pspot_url(pspot) {
-                return "pspot.html?pspot=" + pspot.file + "&el=" + pspot.elem;
+                return "pspot.html?pspot=" + pspot.name + "&el=" + pspot.elem;
             }
         </script>
 
@@ -78,7 +78,7 @@
                 $.getJSON("pspot_data.json", function(data) {
                     pspot_files = data;
                     window.sessionStorage.setItem("pspot_files", JSON.stringify(data));
-                    console.log("Pseudopotential file list loaded");                    
+                    console.log("Pseudopotential file list loaded");                 
                 }),
                 $.getJSON("data/periodic_table/data_tabulated.json", function(data) {
                     periodic_table = data;
