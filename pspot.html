@@ -17,7 +17,7 @@
 
         <div class="pspot_plotbox">
 
-            <img class="pspot_main_plot" id="pspot_plot_jpg" src="graphs/C_OTF/beta.jpg">
+            <img class="pspot_main_plot" id="pspot_plot_jpg">
             </img>
 
             <svg class="pspot_main_plot" id="pspot_plot_svg">
@@ -83,6 +83,7 @@
     		$(document).ready(function() {
     			// Let's load the specific pseudopotential
                 pPage = new PspotPage();
+                pPage.update_plots();
     		});
 
     	</script>

@@ -3,7 +3,7 @@
 import re
 import os
 
-class USPppot:
+class USPppot(object):
 
 	def __init__(self, fname):
 
@@ -16,7 +16,8 @@ class USPppot:
 		f = open(fname)
 		lines = f.readlines()
 
-		self.name = os.path.splitext(os.path.basename(fname))[0]
+		self.file = os.path.basename(fname)
+		self.name = os.path.splitext(self.file)[0]
 
 		try:
 			start_i = lines.index("START COMMENT\n")
@@ -48,20 +49,20 @@ class USPppot:
 		elre = re.compile("Element:[\s]+([A-Za-z]+) ")
 		xcre = re.compile("Level of theory:[\s]+([A-Za-z]+) ")
 
-		self.el = None
+		self.elem = None
 		self.xc = None
 
 		for l in comment_block:
 			res = elre.findall(l)
 			if len(res) > 0:
-				self.el = res[0]
+				self.elem = res[0]
 				res = xcre.findall(l)
 				if len(res) == 0:
 					raise ValueError("PSPOT file {0} is corrupted".format(fname))
 				self.xc = res[0]
 				break
 
-		if self.el is None:
+		if self.elem is None:
 			raise ValueError("PSPOT file {0} is corrupted".format(fname))
 
 		# Finally, the pseudpotential string. This is a bit harder to identify
@@ -77,5 +78,14 @@ class USPppot:
 				res = pspotsre.findall(l)
 				if len(res) == 0:
 					raise ValueError("PSPOT file {0} is corrupted".format(fname))
-				self.pspots = res[0]
+				self.ppot_string = res[0]
 				break
+
+	def __dict__(self):
+
+		return {'name': self.name,
+                 'file': self.file,
+                 'elem': self.elem,
+                 'cutoffs': self.cutoffs,
+                 'xc': self.xc,
+                 'self_string': self.ppot_string}
