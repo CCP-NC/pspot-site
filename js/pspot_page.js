@@ -32,7 +32,7 @@ var PspotPage = function() {
 				$('svg.pspot_main_plot').css("display", "none");
 				$('img.pspot_main_plot').css("display", "inline");
 
-				$('img.pspot_main_plot').attr("src", "graphs/" + this.pspot + "/" + d + ".jpg");
+				$('img.pspot_main_plot').attr("src", "graphs/" + this.pspot + "/" + d + ".png");
 
 				break;
 			case 'interactive':
