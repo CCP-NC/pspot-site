@@ -74,21 +74,49 @@ def run_gnuplot(ppot):
     gp_file = gp_file.replace("<ppot.elem>", ppot.elem)
     # The maximum X value
     gp_file = gp_file.replace("<x_max>", str(max(ppot_info['LOCAL_RC'], *ppot_info['BETA_RC'])*1.2))
-    # Then the channel titles and plotting instructions
-    plot_string = ''
-    scale_string = ''
+    # The local radius
+    gp_file = gp_file.replace("<local_rc>", str(ppot_info['LOCAL_RC']))
+    # Then the channel titles and plotting instructions for Beta projectors
     for i, ch in enumerate('spdf'):
-        gp_file = gp_file.replace("<{0}_title>".format(ch), ch + (" V local" if i == ppot_info['LOCAL_L'] else ''))
+        plot_string = ''
+        scale_string = ''
+        gp_file = gp_file.replace("<{0}_beta_title>".format(ch), ch + (" V_{local}" if i == ppot_info['LOCAL_L'] else ''))        
         if i < ppot_info['LOCAL_L']:
-            plot_string = ', "" '.join(["u 1:{0} w l notitle".format(j+2) for j, l in enumerate(ppot_info['BETA_L']) if l == i])
+            # Add the arrow
+            # Compile list of projectors
+            beta_ch = [j for j, l in enumerate(ppot_info['BETA_L']) if l == i]
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['BETA_RC'][j])) for j in beta_ch])
+            plot_string = ', "" '.join(["u 1:{0} w l lt 1 lc {1} notitle".format(b+2, j+1) for j, b in enumerate(beta_ch)])
         elif i == ppot_info['LOCAL_L']:
-            scale_string = 'stats "{0}_OTF.beta.dat" u {1}\n'.format(ppot.elem, ppot_info['NUM_BETA']+3)
-            scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]'
-            plot_string = 'u 1:{0} w l notitle, "" u 1:{1} w l notitle'.format(ppot_info['NUM_BETA']+2, ppot_info['NUM_BETA']+3)
+            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(ppot.elem, ppot_info['NUM_BETA']+3)
+            scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]\n'
+            scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l lt 0 lc 1 notitle, "" u 1:{1} w l lt 1 lc 1 notitle'.format(ppot_info['NUM_BETA']+2, ppot_info['NUM_BETA']+3)
         else:
             plot_string = ' u 1:(0) w l lc 0 notitle'
-        gp_file = gp_file.replace("<{0}_scale_string>".format(ch), scale_string)
-        gp_file = gp_file.replace("<{0}_plot_string>".format(ch), plot_string)
+        gp_file = gp_file.replace("<{0}_beta_scale>".format(ch), scale_string)
+        gp_file = gp_file.replace("<{0}_beta_plot>".format(ch), plot_string)
+
+    # Now for Pwave projectors
+    for i, ch in enumerate('spdf'):
+        plot_string = ''
+        scale_string = ''
+        gp_file = gp_file.replace("<{0}_pwave_title>".format(ch), ch + (" local" if i == ppot_info['LOCAL_L'] else ''))
+        if i < ppot_info['LOCAL_L']:
+            # Compile list of projectors
+            beta_ch = [j for j, l in enumerate(ppot_info['BETA_L']) if l == i]
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['BETA_RC'][j])) for j in beta_ch])
+            plot_string = ', "" '.join(['u 1:{0} w l lt 0 lc {2} notitle, "" u 1:{1} w l lt 1 lc {2} notitle'.format(2*b+2, 2*b+3, j+1) for j, b in enumerate(beta_ch)])
+        elif i == ppot_info['LOCAL_L']:
+            scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l lt 1 lc 1 notitle, "" u 1:{1} w l lt 0 lc 1 notitle'.format(ppot_info['NUM_BETA']*2+2, ppot_info['NUM_BETA']*2+3)
+        else:
+            scale_string = 'set yrange [-1:0]'
+            plot_string = ' u 1:(0) w l lc 0 notitle'
+
+        gp_file = gp_file.replace("<{0}_pwave_scale>".format(ch), scale_string)
+        gp_file = gp_file.replace("<{0}_pwave_plot>".format(ch), plot_string)
+
 
     gp_fname = os.path.join(dirname, ppot.name+'.gp')
     open(gp_fname, 'w').write(gp_file)
