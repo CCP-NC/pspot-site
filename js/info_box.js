@@ -1,4 +1,4 @@
-InfoBox = function() {
+InfoBox = function(pspot_files, ppList) {
     // Initializes the info box control
 
     this.ibox = $(".info_box");
@@ -17,7 +17,7 @@ InfoBox = function() {
         if (el.symbol in pspot_files) {
 
             var pspot_page_link = $("<a>").attr("href", pspot_url(pspot_files[el.symbol].default))
-                                          .html(pspot_files[el.symbol].default.file);
+                                          .html(pspot_files[el.symbol].default.library);
             this.ibox.find('.info_pspot_default').html('').append(pspot_page_link);
 
             this.ibox.find('.info_nopspot').css("display", "none");

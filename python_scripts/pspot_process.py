@@ -9,11 +9,12 @@ import subprocess
 import shutil
 import argparse as ap
 
-from pspot_usp import USPppot
+from pspot_usp import USPpspot
 
 def clear_folder(fold):
 
-    # Grab everything in the folder and delete it
+    """ Delete all the contents of a given folder """
+
     for f in glob.glob(os.path.join(fold, '*')):
         try:
             shutil.rmtree(f)
@@ -23,75 +24,93 @@ def clear_folder(fold):
             except OSError:
                 sys.stderr.write("WARNING: couldn't delete {0}\n".format(f))
 
-def ppot_dirname(ppot):
+def lib_dirname(lib_name):
+
+    """ Generate the name of the directory to hold the contents of a
+        pseudopotential library. """
 
     global config, main_abspath
 
-    return os.path.join(main_abspath, config['graph_path'], ppot.name)
+    return os.path.join(main_abspath, config['graph_path'], lib_name)
 
-def run_castep_calc(ppot):
+def pspot_dirname(pspot):
+
+    global config, main_abspath
+
+    return os.path.join(main_abspath, config['graph_path'], pspot.name)
+
+def run_castep_calc(lib, lib_name):
 
     global config, main_abspath, cell_template, param_template
 
-    cell_file = cell_template.replace('<ppot.elem>', ppot.elem)
-    cell_file = cell_file.replace('<ppot.ppot_string>', ppot.ppot_string)
+    # Build the positions and pseudopotential blocks
+    positions_block = ''
+    potentials_block = ''
+    for el in lib:
+        if lib[el].endswith('[]'):
+            lib[el] = lib[el][:-2]
+        positions_block += "{0} 0 0 0\n".format(el)
+        potentials_block += "{0} {1}[]\n".format(el, lib[el])
+
+    cell_file = cell_template.replace('<positions_block>', positions_block)
+    cell_file = cell_file.replace('<potentials_block>', potentials_block)
 
     param_file = param_template # For now no replacement is needed
 
+    # At this point generate the directory structure
+    dirname = lib_dirname(lib_name)
+    if not os.path.exists(dirname):
+        os.mkdir(dirname)
+    else:
+        clear_folder(dirname)
 
-    # Save it in its own folder
-    dirname = ppot_dirname(ppot)
-    os.mkdir(dirname)
-    cell_fname = os.path.join(dirname, ppot.name+'.cell')
+    cell_fname = os.path.join(dirname, lib_name+'.cell')
     open(cell_fname, 'w').write(cell_file)
-    param_fname = os.path.join(dirname, ppot.name+'.param')
+    param_fname = os.path.join(dirname, lib_name+'.param')
     open(param_fname, 'w').write(param_file)
 
     # Now run a CASTEP dryrun
     try:
         castep_run = subprocess.Popen([config['castep_command'],
                                        '-dryrun',
-                                       ppot.name], cwd=dirname)
+                                       lib_name], cwd=dirname)
         castep_run.wait()
     except OSError:
         sys.stderr.write("CASTEP run failed, skipping\n")
         return
 
-def run_gnuplot(ppot):
+def run_gnuplot(pspot):
 
     global config, main_abspath, gp_template
 
-    dirname = ppot_dirname(ppot)
-    
     # Parse the YAML info file for relevant quantities
-    ppot_info = yaml.load(open(os.path.join(dirname,
-                                            "{0}_OTF.info.yml".format(ppot.elem))))
+    pspot_info = yaml.load(open(os.path.join(main_abspath, pspot['basepath'] + '_OTF.info.yml')))
 
     # Write the Gnuplot file for plotting
     gp_file = gp_template
     # Now run the necessary substitutions
     # First the potential name
-    gp_file = gp_file.replace("<ppot.elem>", ppot.elem)
+    gp_file = gp_file.replace("<pspot.elem>", pspot['elem'])
     # The maximum X value
-    gp_file = gp_file.replace("<x_max>", str(max(ppot_info['LOCAL_RC'], *ppot_info['BETA_RC'])*1.2))
+    gp_file = gp_file.replace("<x_max>", str(max(pspot_info['LOCAL_RC'], *pspot_info['BETA_RC'])*1.2))
     # The local radius
-    gp_file = gp_file.replace("<local_rc>", str(ppot_info['LOCAL_RC']))
+    gp_file = gp_file.replace("<local_rc>", str(pspot_info['LOCAL_RC']))
     # Then the channel titles and plotting instructions for Beta projectors
     for i, ch in enumerate('spdf'):
         plot_string = ''
         scale_string = ''
-        gp_file = gp_file.replace("<{0}_beta_title>".format(ch), ch + (" V_{local}" if i == ppot_info['LOCAL_L'] else ''))        
-        if i < ppot_info['LOCAL_L']:
+        gp_file = gp_file.replace("<{0}_beta_title>".format(ch), ch + (" V_{local}" if i == pspot_info['LOCAL_L'] else ''))        
+        if i < pspot_info['LOCAL_L']:
             # Add the arrow
             # Compile list of projectors
-            beta_ch = [j for j, l in enumerate(ppot_info['BETA_L']) if l == i]
-            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['BETA_RC'][j])) for j in beta_ch])
+            beta_ch = [j for j, l in enumerate(pspot_info['BETA_L']) if l == i]
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
             plot_string = ', "" '.join(["u 1:{0} w l lt 1 lc {1} notitle".format(b+2, j+1) for j, b in enumerate(beta_ch)])
-        elif i == ppot_info['LOCAL_L']:
-            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(ppot.elem, ppot_info['NUM_BETA']+3)
+        elif i == pspot_info['LOCAL_L']:
+            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['elem'], pspot_info['NUM_BETA']+3)
             scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]\n'
-            scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['LOCAL_RC']))
-            plot_string = 'u 1:{0} w l lt 0 lc 1 notitle, "" u 1:{1} w l lt 1 lc 1 notitle'.format(ppot_info['NUM_BETA']+2, ppot_info['NUM_BETA']+3)
+            scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l lt 0 lc 1 notitle, "" u 1:{1} w l lt 1 lc 1 notitle'.format(pspot_info['NUM_BETA']+2, pspot_info['NUM_BETA']+3)
         else:
             plot_string = ' u 1:(0) w l lc 0 notitle'
         gp_file = gp_file.replace("<{0}_beta_scale>".format(ch), scale_string)
@@ -101,15 +120,15 @@ def run_gnuplot(ppot):
     for i, ch in enumerate('spdf'):
         plot_string = ''
         scale_string = ''
-        gp_file = gp_file.replace("<{0}_pwave_title>".format(ch), ch + (" local" if i == ppot_info['LOCAL_L'] else ''))
-        if i < ppot_info['LOCAL_L']:
+        gp_file = gp_file.replace("<{0}_pwave_title>".format(ch), ch + (" local" if i == pspot_info['LOCAL_L'] else ''))
+        if i < pspot_info['LOCAL_L']:
             # Compile list of projectors
-            beta_ch = [j for j, l in enumerate(ppot_info['BETA_L']) if l == i]
-            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['BETA_RC'][j])) for j in beta_ch])
+            beta_ch = [j for j, l in enumerate(pspot_info['BETA_L']) if l == i]
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
             plot_string = ', "" '.join(['u 1:{0} w l lt 0 lc {2} notitle, "" u 1:{1} w l lt 1 lc {2} notitle'.format(2*b+2, 2*b+3, j+1) for j, b in enumerate(beta_ch)])
-        elif i == ppot_info['LOCAL_L']:
-            scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(ppot_info['LOCAL_RC']))
-            plot_string = 'u 1:{0} w l lt 1 lc 1 notitle, "" u 1:{1} w l lt 0 lc 1 notitle'.format(ppot_info['NUM_BETA']*2+2, ppot_info['NUM_BETA']*2+3)
+        elif i == pspot_info['LOCAL_L']:
+            scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l lt 1 lc 1 notitle, "" u 1:{1} w l lt 0 lc 1 notitle'.format(pspot_info['NUM_BETA']*2+2, pspot_info['NUM_BETA']*2+3)
         else:
             scale_string = 'set yrange [-1:0]'
             plot_string = ' u 1:(0) w l lc 0 notitle'
@@ -118,10 +137,11 @@ def run_gnuplot(ppot):
         gp_file = gp_file.replace("<{0}_pwave_plot>".format(ch), plot_string)
 
 
-    gp_fname = os.path.join(dirname, ppot.name+'.gp')
+    gp_fname = os.path.join(main_abspath, pspot['basepath']+'.gp')
     open(gp_fname, 'w').write(gp_file)
 
     # Now run gnuplot
+    dirname = lib_dirname(pspot['library'])
     try:
         gnuplot_run = subprocess.Popen([config['gnuplot_command'], gp_fname], cwd=dirname)
         gnuplot_run.wait()
@@ -132,6 +152,8 @@ def run_gnuplot(ppot):
 def parse_agrfile(fname):
 
     # Parse a Grace file returning graphs, datasets for each of them, and additional info
+    # CURRENTLY DEPRECATED AND NOT IN USE
+
     agrf = open(fname).readlines()
     agrobj = {}
 
@@ -195,19 +217,19 @@ def parse_agrfile(fname):
 
     return agrobj
 
-def parse_betaproj(ppot):
+def parse_betaproj(pspot):
 
     global config, main_abspath
 
     # Go and fetch the beta projector file for the given pseudopotential
 
-    dirname = os.path.join(main_abspath, config['graph_path'], ppot.name)
-    beta_fname = os.path.join(dirname, ppot.name+'.beta')
+    dirname = os.path.join(main_abspath, config['graph_path'], pspot.name)
+    beta_fname = os.path.join(dirname, pspot.name+'.beta')
 
     try:
         beta_obj = parse_agrfile(beta_fname)
     except IOError:
-        sys.stderr.write("Could not parse beta projectors for pseudopotential {0}\n".format(ppot.name))
+        sys.stderr.write("Could not parse beta projectors for pseudopotential {0}\n".format(pspot.name))
         return None
 
     return beta_obj
@@ -223,12 +245,13 @@ args = parser.parse_args()
 # First some useful configurable constants
 config = {
     "main_relpath": "..",
-    "pspot_path": "data/pspot",
+    "pspot_path": "data/libraries",
     "pspot_extension": "usp",
     "pspot_name_separator": "_",
-    "pspot_default_termination": "OTF",
+    "default_library": "test_library",
     "graph_path": "graphs",
     "castep_command": "castep.serial",
+    "gnuplot_command": "gnuplot",
     "cell_template": "template.cell",
     "param_template": "template.param",
     "gp_template": "template.gp"
@@ -262,88 +285,98 @@ try:
 except IOError:
     sys.stderr.write("Gnuplot template file not found, plots will not be produced\n")
 
-# Now start by building a full table of all pseudopotential files
+# Now load all the various libraries
 
-pspot_file_list = glob.glob(os.path.join(main_abspath, config['pspot_path'], '*.' + config['pspot_extension']))
+pspot_library_list = glob.glob(os.path.join(main_abspath, config['pspot_path'], '*'))
+pspot_library_dict = {}
 pspot_list = []
-pspot_info_dict = {}
 
-for f_i, fname in enumerate(pspot_file_list):
+# Clear the folder containing the calculations
+if not args.nocastep and cell_template is not None:
+    clear_folder(os.path.join(main_abspath, config['graph_path']))
+
+for lib_fname in pspot_library_list:
     
-    # Parse assuming USP format
-    # If not valid, just skip
+    # Parse the given library
     try:
-        ppot = USPppot(fname)
-    except (IOError, ValueError) as e:
-        # Something didn't work, skip
-        sys.stderr.write("Parsing of file {0} failed.\nDetails: {1}\nSkipping...\n".format(fname, e))
+        lib = yaml.load(open(lib_fname))
+    except yaml.scanner.ScannerError as e:
+        sys.stderr.write("Parsing of library {0} failed.\nDetails: {1}\n" +
+                         "Skipping...\n".format(lib_fname, e))
         continue
+
+    lib_name = os.path.splitext(os.path.basename(lib_fname))[0] # Remove the extension if present
+    if lib_name not in pspot_library_dict:
+        pspot_library_dict[lib_name] = lib
+    else:
+        sys.stderr.write("Duplicated library with name {0} detected.\n" +
+                         "Skipping...".format(lib_name))
 
     # "Default" is specially reserved
-    if ppot.name == "default":
-        sys.stderr.write("The name 'default' is reserved and can not be used for a pseudopotential file. Skipping...\n")
+    if lib_name == "default":
+        sys.stderr.write("The name 'default' is reserved and can not be " +
+                         "used for a pseudopotential library. Skipping...\n")
         continue
 
-    if ppot.elem not in pspot_info_dict:
-        pspot_info_dict[ppot.elem] = {'default': None}
+    # Now run a CASTEP calculation on the whole library (if so requested)
+    if not args.nocastep and cell_template is not None:
+        sys.stdout.write("Running CASTEP calculation" +
+                         " for library {0}\n".format(lib_name))
+        run_castep_calc(lib, lib_name)
 
-    ppot_info = ppot.__dict__()
-    ppot_info['path'] = os.path.join(config['pspot_path'], ppot.file)
+# Now save the related info in full form,
+# split BY ELEMENT rather than by library
+pspot_elem_dict = {}
 
-    pspot_info_dict[ppot.elem][ppot.name] = ppot_info
+for lib_name in pspot_library_dict:
 
-    # And if default tag it as such
-    is_default = (ppot.name.split(config['pspot_name_separator'])[-1] == config['pspot_default_termination'])
-    if is_default:
-        pspot_info_dict[ppot.elem]['default'] = ppot_info
+    lib = pspot_library_dict[lib_name]
+    libdir = lib_dirname(lib_name)
 
-    pspot_list.append(ppot)
+    for el in lib:
+        
+        # Actually load the file to gather info
+        el_fname = os.path.join(libdir, '{0}_OTF.usp'.format(el))
+        try:
+            pspot = USPpspot(el_fname)
+        except (IOError, ValueError) as e:
+            # Something didn't work, skip
+            sys.stderr.write("Parsing of file {0} failed.\nDetails: {1}\nSkipping...\n".format(el_fname, e))
+            continue
+
+        if el not in pspot_elem_dict:
+            pspot_elem_dict[el] = {'default': None}
+
+        pspot_elem_dict[el][lib_name] = pspot.__dict__()
+        # Add some information
+        pspot_elem_dict[el][lib_name]['library'] = lib_name
+        # This one forms the basis for all related files (plots etc.)
+        # with different terminations/extensions
+        pspot_elem_dict[el][lib_name]['basepath'] = os.path.join(config['graph_path'], lib_name, el)
+
+        if lib_name == config['default_library']:
+            pspot_elem_dict[el]['default'] = pspot_elem_dict[el][lib_name]
 
 # Now save the entire dictionary as JSON
-json.dump(pspot_info_dict, open(os.path.join(main_abspath, 'pspot_data.json'), 'w'), indent=2)
+json.dump(pspot_elem_dict, open(os.path.join(main_abspath, 'pspot_data.json'), 'w'), indent=2)
 
 # Now generate the appropriate plots
-if not args.noplot and cell_template is not None:
-
-    if not args.nocastep:
-        # Clear the folder
-        clear_folder(os.path.join(main_abspath, config['graph_path']))
+if not args.noplot:
 
     agr_extensions = ['beta', 'econv', 'pwave']
 
-    for p_i, ppot in enumerate(pspot_list):
+    for el in pspot_elem_dict:
+        for lib in pspot_elem_dict[el]:
 
-        sys.stdout.write("Processing pseudopotential file {0} of {1}\n".format(p_i+1, len(pspot_list)))
-
-        # Time to make graphs! First run CASTEP, then actually plot stuff
-
-        if not args.nocastep:
-            sys.stdout.write("Running CASTEP calculation\n")
-            run_castep_calc(ppot)
-        sys.stdout.write("Plotting graphs\n")
-
-        run_gnuplot(ppot)
-
-        """
-        dirname = ppot_dirname(ppot)
-
-        for ext in agr_extensions:
-            fname = os.path.join(dirname, ppot.elem+'_OTF.'+ext)
-            try:
-                agr_obj = parse_agrfile(fname)
-            except IOError:
-                sys.stderr.write("Could not parse {0} file for pseudopotential {1}\n".format(ext, ppot.name))
+            if lib == 'default':
+                # Skip or it will be duplicated
                 continue
 
-            # Now dump it as json file
-            json.dump(agr_obj, open(os.path.join(dirname, ext + '.json'), 'w'), indent=2)
-            # Also create an SVG with Grace for good measure
-            try:
-                xmgrace_run = subprocess.Popen(['xmgrace', fname, '-hdevice', 
-                                                'JPEG', '-hardcopy',
-                                                '-printfile', os.path.join(dirname, ext+'.jpg'),
-                                                '-fixed', '1024', '768'])
-                xmgrace_run.wait()
-            except OSError:
-                sys.stderr.write("Grace not installed, PNG plots can not be generated\n")
-        """
+            sys.stdout.write(("Processing pseudopotential file: {0}," +
+                              " library: {1}\n").format(el, lib))
+
+            # Time to make graphs! First run CASTEP, then actually plot stuff
+
+            sys.stdout.write("Plotting graphs\n")
+
+            run_gnuplot(pspot_elem_dict[el][lib])
