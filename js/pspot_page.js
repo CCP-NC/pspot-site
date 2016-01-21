@@ -7,6 +7,9 @@ var PspotPage = function(pspot_files) {
 	this.library = up.lib;
 	this.element = up.el;
 
+	// Assign title
+	$('title').html("Pseudopotential: " + this.element + " - " + this.library);
+
 	// Now start changing elements as required
 	// Grab the required pseudopotential info from the Session Storage, parsing back JSON into an Object
 	this.pspot = pspot_files[this.element][this.library];	
