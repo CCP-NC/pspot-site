@@ -1,4 +1,4 @@
-PsPotList = function(visible) {
+PsPotList = function(pspot_files) {
 
 	this.dscreen = $(".dark_screen");
 	this.table = $(".pspot_list_table");
@@ -7,7 +7,7 @@ PsPotList = function(visible) {
 	function pspot_row(pspot) {
 
 		var row = $("<tr>");
-		var link = $("<td>").append($("<a>").html(pspot.file).attr('href', pspot_url(pspot)));
+		var link = $("<td>").append($("<a>").html(pspot.library).attr('href', pspot_url(pspot)));
 		var cutoff = $("<td>").html(pspot.cutoffs.FINE);
 		var xcfunc = $("<td>").html(pspot.xc);
 
@@ -35,11 +35,8 @@ PsPotList = function(visible) {
 	// Assign a function to close this when dark screen is clicked
 	// The "proxy" bit controls the local scope
 	this.dscreen.on("click", $.proxy(this.hide, this));
-
-	if (visible)
-		this.show();
-	else
-		this.hide();
+	// Always start hidden
+	this.hide();
 
 }
 

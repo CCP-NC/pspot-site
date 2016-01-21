@@ -3,7 +3,7 @@
 import re
 import os
 
-class USPppot(object):
+class USPpspot(object):
 
 	def __init__(self, fname):
 
@@ -66,7 +66,7 @@ class USPppot(object):
 			raise ValueError("PSPOT file {0} is corrupted".format(fname))
 
 		# Finally, the pseudpotential string. This is a bit harder to identify
-		pspotsre = re.compile("\"([0-9a-zA-Z\.:|()=]+)\"")
+		pspotsre = re.compile("\"([0-9a-zA-Z\.:|()=]+)(?:\[\])*\"")
 		def is_dash(s):
 			s = s.strip()
 			return s == len(s)*'-'
@@ -78,7 +78,7 @@ class USPppot(object):
 				res = pspotsre.findall(l)
 				if len(res) == 0:
 					raise ValueError("PSPOT file {0} is corrupted".format(fname))
-				self.ppot_string = res[0]
+				self.pspot_string = res[0]
 				break
 
 	def __dict__(self):
@@ -88,4 +88,4 @@ class USPppot(object):
                  'elem': self.elem,
                  'cutoffs': self.cutoffs,
                  'xc': self.xc,
-                 'self_string': self.ppot_string}
+                 'pspot_string': self.pspot_string}

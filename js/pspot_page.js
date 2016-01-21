@@ -1,22 +1,22 @@
 // Handling the pspot.html page
 
-var PspotPage = function() {
+var PspotPage = function(pspot_files) {
 
 	up = urlParams();
 
-	this.pspot = up.pspot;
+	this.library = up.lib;
 	this.element = up.el;
 
 	// Now start changing elements as required
 	// Grab the required pseudopotential info from the Session Storage, parsing back JSON into an Object
-	var pspot_info = JSON.parse(window.sessionStorage.getItem("pspot_files"))[this.element][this.pspot];	
+	this.pspot = pspot_files[this.element][this.library];	
 
-	$('.info_name').html(pspot_info.name);
-	$('.info_element').html(pspot_info.elem);
-	$('#pspot_line').html(pspot_info.ppot_string);
+	$('.info_name').html(this.pspot.library);
+	$('.info_element').html(this.pspot.elem);
+	$('#pspot_line').html(this.pspot.pspot_string);
 
-	for (cut in pspot_info.cutoffs) {
-		$('#cut_val_' + cut.toLowerCase()).html(pspot_info.cutoffs[cut]);
+	for (cut in this.pspot.cutoffs) {
+		$('#cut_val_' + cut.toLowerCase()).html(this.pspot.cutoffs[cut]);
 	}
 
 
@@ -32,7 +32,7 @@ var PspotPage = function() {
 				$('svg.pspot_main_plot').css("display", "none");
 				$('img.pspot_main_plot').css("display", "inline");
 
-				$('img.pspot_main_plot').attr("src", "graphs/" + this.pspot + "/" + d + ".png");
+				$('img.pspot_main_plot').attr("src", this.pspot.basepath + "." + d + ".png");
 
 				break;
 			case 'interactive':

@@ -79,12 +79,22 @@
 
     	<script>
 
-            var pPage;
+     		$(document).ready(function() {
+                // First load the relevant information
 
-    		$(document).ready(function() {
-    			// Let's load the specific pseudopotential
-                pPage = new PspotPage();
-                pPage.update_plots();
+                var pspot_files;
+
+                $.when(
+                    $.getJSON("pspot_data.json", function(data) {
+                        pspot_files = data;
+                        console.log("Pseudopotential file list loaded");                 
+                    })
+                ).then(function() {
+                    // Let's load the specific pseudopotential
+                    var pPage = new PspotPage(pspot_files);                    
+                    pPage.update_plots();
+                });
+
     		});
 
     	</script>

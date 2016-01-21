@@ -4,9 +4,9 @@
 %ENDBLOCK LATTICE_ABC
 
 %BLOCK POSITIONS_FRAC
-<ppot.elem> 0	0	0
+<positions_block>
 %ENDBLOCK POSITIONS_FRAC
 
 %BLOCK SPECIES_POT
-<ppot.elem> <ppot.ppot_string>[]
+<potentials_block>
 %ENDBLOCK SPECIES_POT

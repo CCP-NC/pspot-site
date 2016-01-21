@@ -1,3 +1,3 @@
-{castep_command: castep.serial, gnuplot_command: gnuplot,
-  cell_template: template.cell, graph_path: graphs, main_relpath: .., pspot_default_termination: OTF, pspot_extension: usp, pspot_name_separator: _,
-  pspot_path: data/pspot, param_template: template.param, gp_template: template.gp}
+{castep_command: castep.serial, cell_template: template.cell, default_library: test_library,
+  gnuplot_command: gnuplot, gp_template: template.gp, graph_path: graphs, main_relpath: ..,
+  param_template: template.param, pspot_extension: usp, pspot_name_separator: _, pspot_path: data/libraries}
