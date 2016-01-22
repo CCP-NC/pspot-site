@@ -244,8 +244,6 @@ a:hover {
 
 .pspot_main_plot {
     position: absolute;
-    max-width: 100%;
-    max-height: 100%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -253,12 +251,17 @@ a:hover {
     margin: auto;
 }
 
-.pspot_plot_jpg {
+#pspot_plot_png {
+    max-width: 100%;
+    max-height: 100%;
     display: inline;
 }
 
-.pspot_plot_svg {
+#pspot_plot_svg {
     display: none;
+    width: 90%;
+    height: 90%;
+    background-color: #dd44dd;
 }
 
 .pspot_plotbox {
@@ -362,4 +365,10 @@ a:hover {
 .back_button:hover {
     background-color: #dddddd;
     text-decoration: none;
+}
+
+.line_basic {
+    stroke: #000000;
+    stroke-width: 1px;
+    fill: none;
 }
