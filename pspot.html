@@ -58,6 +58,7 @@
                     <li><span class="li_header">Pseudopotential string:</span><br>
                         <span id="pspot_line">Test</span>
                     </li>
+                    <!--
                     <li>
                         <span class="li_header">Plot type:</span>
                         <select id="plot_type_select">
@@ -65,6 +66,7 @@
                             <option value="interactive">Interactive plots</option>
                         </select>
                     </li>
+                    -->
                     <li>
                         <span class="li_header">Plotted data:</span>
                         <select id="plot_data_select">
@@ -72,6 +74,24 @@
                             <option value="econv">Energy convergence</option>
                             <option value="pwave">Partial waves</option>
                         </select>
+                    </li>
+                    <li>
+                        <span class="li_header">Raw data files:</span>
+                        <ul>
+                            <li><a class="file_link" id="link_beta">Beta projectors</a></li>
+                            <li><a class="file_link" id="link_econv">Energy Convergence</a></li>
+                            <li><a class="file_link" id="link_pwave">Partial waves</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="li_header">Plotting files:</span><br>
+                        <span class="note">(note: the Gnuplot file requires all raw data files to be in the same folder)</span>
+                        <ul>
+                            <li><a class="file_link" id="link_gnuplot">Gnuplot - all</a></li>
+                            <li><a class="file_link" id="link_grace_beta">Grace - beta projectors</a></li>
+                            <li><a class="file_link" id="link_grace_econv">Grace - energy convergence</a></li>
+                            <li><a class="file_link" id="link_grace_pwave">Grace - partial waves</a></li>
+                        <ul>
                     </li>
 
             </div>

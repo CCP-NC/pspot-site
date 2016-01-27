@@ -57,6 +57,19 @@ var ElemTable = function(selector, width, height) {
 // Main Mendelev table
 var MendvTable = function(periodic_data, ibox) {
 
+    // Default colors
+    var group_col = {'actinoid': '#55ee99',
+        'alkali metal': '#774422',
+        'alkaline earth metal': '#774400',
+        'halogen': '#00ff44',
+        'lanthanoid': '#33cc77',
+        'metal': '#6666aa',
+        'metalloid': '#cc88bb',
+        'noble gas': '#ddddff',
+        'nonmetal': '#bb33cc',
+        'transition metal': '#9999dd'};
+
+
     this.getCoordsMendv = function(d) {
         if (d.subTable != "Main")
             return null;
@@ -70,7 +83,7 @@ var MendvTable = function(periodic_data, ibox) {
     }
 
     this.makeElemMendv = function(e, d) {
-        var main_div = e.style('background-color', '#' + d.cpkHexColor)
+        var main_div = e.style('background-color', group_col[d.groupBlock])
                         .append('div')
                         .classed('elem_mendv', true);
         main_div.append('div')

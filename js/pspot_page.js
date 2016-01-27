@@ -22,10 +22,23 @@ var PspotPage = function(pspot_files) {
 		$('#cut_val_' + cut.toLowerCase()).html(this.pspot.cutoffs[cut]);
 	}
 
+	// Now update the links
+	dtypes = ['beta', 'econv', 'pwave'];
+	for (var i = 0; i < 3; ++i) {
+		$('#link_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i] + ".dat",
+							   		  'download': this.pspot.elem + "_" + this.pspot.library + "." + dtypes[i] + ".dat"});
+		$('#link_grace_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i],
+							   		  	    'download': this.pspot.elem + "_" + this.pspot.library + "." + dtypes[i] + ".agr"});
+	}
+
+	$('#link_gnuplot').attr({'href': this.pspot.basepath + ".gp",
+							 'download': this.pspot.elem + "_" + this.pspot.library + ".gp"});
 
 	this.update_plots = function() {
 
-		var t = this.ptype.val();
+		// For now this functionality is disabled
+		//var t = this.ptype.val();
+		var t = 'static'; 
 		var d = this.pdata.val();
 
 		// So, what are we to visualize?

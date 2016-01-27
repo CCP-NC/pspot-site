@@ -358,7 +358,6 @@ a:hover {
 
     cursor: pointer;
 
-    color: #000000;
     background-color: #cccccc;
 }
 
@@ -367,8 +366,22 @@ a:hover {
     text-decoration: none;
 }
 
+.file_link {
+    font-weight: normal;
+    font-size: 14pt;
+    cursor: pointer;
+}
+
+.file_link:hover {
+    text-decoration: underline;
+}
+
 .line_basic {
     stroke: #000000;
     stroke-width: 1px;
     fill: none;
+}
+
+.note {
+    font-size: 12pt;
 }
