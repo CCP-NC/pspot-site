@@ -104,15 +104,15 @@ def run_gnuplot(pspot):
             # Add the arrow
             # Compile list of projectors
             beta_ch = [j for j, l in enumerate(pspot_info['BETA_L']) if l == i]
-            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
-            plot_string = ', "" '.join(["u 1:{0} w l lt 1 lc {1} notitle".format(b+2, j+1) for j, b in enumerate(beta_ch)])
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
+            plot_string = ', "" '.join(["u 1:{0} w l ls {1} notitle".format(b+2, j+1) for j, b in enumerate(beta_ch)])
         elif i == pspot_info['LOCAL_L']:
             scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['elem'], pspot_info['NUM_BETA']+3)
             scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]\n'
-            scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['LOCAL_RC']))
-            plot_string = 'u 1:{0} w l lt 0 lc 1 notitle, "" u 1:{1} w l lt 1 lc 1 notitle'.format(pspot_info['NUM_BETA']+2, pspot_info['NUM_BETA']+3)
+            scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 100'.format(str(pspot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l ls 101 notitle, "" u 1:{1} w l ls 1 notitle'.format(pspot_info['NUM_BETA']+2, pspot_info['NUM_BETA']+3)
         else:
-            plot_string = ' u 1:(0) w l lc 0 notitle'
+            plot_string = ' u 1:(0) w l ls 0 notitle'
         gp_file = gp_file.replace("<{0}_beta_scale>".format(ch), scale_string)
         gp_file = gp_file.replace("<{0}_beta_plot>".format(ch), plot_string)
 
@@ -124,14 +124,14 @@ def run_gnuplot(pspot):
         if i < pspot_info['LOCAL_L']:
             # Compile list of projectors
             beta_ch = [j for j, l in enumerate(pspot_info['BETA_L']) if l == i]
-            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
-            plot_string = ', "" '.join(['u 1:{0} w l lt 0 lc {2} notitle, "" u 1:{1} w l lt 1 lc {2} notitle'.format(2*b+2, 2*b+3, j+1) for j, b in enumerate(beta_ch)])
+            scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(pspot_info['BETA_RC'][j])) for j in beta_ch])
+            plot_string = ', "" '.join(['u 1:{0} w l ls {2} notitle, "" u 1:{1} w l ls {3} notitle'.format(2*b+2, 2*b+3, j+101, j+1) for j, b in enumerate(beta_ch)])
         elif i == pspot_info['LOCAL_L']:
-            scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead lt 0 lc 0'.format(str(pspot_info['LOCAL_RC']))
-            plot_string = 'u 1:{0} w l lt 1 lc 1 notitle, "" u 1:{1} w l lt 0 lc 1 notitle'.format(pspot_info['NUM_BETA']*2+2, pspot_info['NUM_BETA']*2+3)
+            scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(pspot_info['LOCAL_RC']))
+            plot_string = 'u 1:{0} w l ls 1 notitle, "" u 1:{1} w l ls 101 notitle'.format(pspot_info['NUM_BETA']*2+2, pspot_info['NUM_BETA']*2+3)
         else:
             scale_string = 'set yrange [-1:0]'
-            plot_string = ' u 1:(0) w l lc 0 notitle'
+            plot_string = ' u 1:(0) w l ls 0 notitle'
 
         gp_file = gp_file.replace("<{0}_pwave_scale>".format(ch), scale_string)
         gp_file = gp_file.replace("<{0}_pwave_plot>".format(ch), plot_string)

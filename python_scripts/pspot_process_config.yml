@@ -1,3 +1,3 @@
-{castep_command: /home/wml08325/Desktop/castepoffrepo/CASTEP-develop.hg/obj/linux_x86_64_ifort15/castep.serial, cell_template: template.cell, default_library: test_library,
+{castep_command: castep.serial, cell_template: template.cell, default_library: test_library,
   gnuplot_command: gnuplot, gp_template: template.gp, graph_path: graphs, main_relpath: ..,
   param_template: template.param, pspot_extension: usp, pspot_name_separator: _, pspot_path: data/libraries}
