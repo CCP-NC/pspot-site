@@ -7,37 +7,85 @@ var PspotPage = function(pspot_files) {
 	this.library = up.lib;
 	this.element = up.el;
 
-	// Assign title
-	$('title').html("Pseudopotential: " + this.element + " - " + this.library);
+	// References to important select elements
+	this.ptype = $('#plot_type_select');
+	this.pdata = $('#plot_data_select');
+	this.lchos = $('#lib_choose_select');
 
-	// Now start changing elements as required
-	// Grab the required pseudopotential info from the Session Storage, parsing back JSON into an Object
-	this.pspot = pspot_files[this.element][this.library];	
-
-	$('.info_name').html(this.pspot.library);
-	$('.info_element').html(this.pspot.elem);
-	$('#pspot_line').html(this.pspot.pspot_string);
-
-	for (cut in this.pspot.cutoffs) {
-		$('#cut_val_' + cut.toLowerCase()).html(this.pspot.cutoffs[cut]);
+	// Now fill the latter with the correct values
+	// Start with the current one
+	this.lchos.empty();
+	for (lib in pspot_files[this.element]) {
+		this.lchos.append($('<option>').attr('value', lib).text(lib));
 	}
+	this.lchos.val(this.library);
 
-	// Now update the links
-	dtypes = ['beta', 'econv', 'pwave'];
-	for (var i = 0; i < 3; ++i) {
-		$('#link_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i] + ".dat",
-							   		  'download': this.pspot.elem + "_" + this.pspot.library + "." + dtypes[i] + ".dat"});
-		$('#link_grace_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i],
-							   		  	    'download': this.pspot.elem + "_" + this.pspot.library + "." + dtypes[i] + ".agr"});
+	this.update_pspot = function() {
+
+		this.library = this.lchos.val();
+
+		// Assign title
+		$('title').html("Pseudopotential: " + this.element + " - " + this.library);
+
+		// Now start changing elements as required
+		// Grab the required pseudopotential info from the Session Storage, parsing back JSON into an Object
+		this.pspot = pspot_files[this.element][this.library];
+
+		$('.info_name').html(this.pspot.library);
+		$('.info_element').html(this.pspot.ELEMENT);
+		$('#pspot_line').html(this.pspot.pspot_string);
+
+		$('#info_ion_charge').html(this.pspot.IONIC_CHARGE);
+		$('#info_xc').html(this.pspot.LEVEL_THEORY);
+		$('#info_solver').html(this.pspot.SOLVER);
+
+		// Build electronic structure string
+		// What's the highest shell?
+		var elstruct = this.pspot.ELECTRONIC_STRUCTURE;
+		var max_n = parseInt(elstruct[elstruct.length-1].ORBITAL);
+		var elstruct_str = "";
+		for (var i = 0; i < elstruct.length; ++i) {
+			var n = parseInt(elstruct[i].ORBITAL);
+			if (n < max_n)
+				continue;
+			elstruct_str += elstruct[i].ORBITAL;
+			// Occupancy
+			if (Math.round(elstruct[i].OCCUPATION) == elstruct[i].OCCUPATION) {
+				elstruct_str += '[' + elstruct[i].OCCUPATION.toFixed(0) + '],';
+			}
+			else {
+				elstruct_str += '[' + elstruct[i].OCCUPATION.toFixed(2) + '],';
+			}
+		}
+		elstruct_str = elstruct_str.slice(0, elstruct_str.length-1);
+
+		$('#info_elstruct').html(elstruct_str);
+
+		for (cut in this.pspot.CUTOFFS) {
+			$('#cut_val_' + cut.toLowerCase()).html(this.pspot.CUTOFFS[cut]);
+		}
+
+		// Now update the links
+		dtypes = ['beta', 'econv', 'pwave'];
+		for (var i = 0; i < 3; ++i) {
+			$('#link_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i] + ".dat",
+								   		  'download': this.pspot.ELEMENT + "_" + this.pspot.library + "." + dtypes[i] + ".dat"});
+			$('#link_grace_' + dtypes[i]).attr({'href': this.pspot.basepath + "_OTF." + dtypes[i],
+								   		  	    'download': this.pspot.ELEMENT + "_" + this.pspot.library + "." + dtypes[i] + ".agr"});
+		}
+
+		$('#link_gnuplot').attr({'href': this.pspot.basepath + ".gp",
+								 'download': this.pspot.ELEMENT + "_" + this.pspot.library + ".gp"});	
+
+		// And finish by updating the plots accordingly
+		this.update_plots();	
 	}
-
-	$('#link_gnuplot').attr({'href': this.pspot.basepath + ".gp",
-							 'download': this.pspot.elem + "_" + this.pspot.library + ".gp"});
 
 	this.update_plots = function() {
 
 		// For now this functionality is disabled
 		//var t = this.ptype.val();
+
 		var t = 'static'; 
 		var d = this.pdata.val();
 
@@ -60,12 +108,10 @@ var PspotPage = function(pspot_files) {
 		}
 	}
 
-	// Tie the update_plots function to the relevant dropdown menus
-	this.ptype = $('#plot_type_select');
-	this.pdata = $('#plot_data_select');
-
 	// jQuery's proxy function allows to control the scope in which the callback is executed
 	this.ptype.on('change', $.proxy(function() {this.update_plots();}, this));
 	this.pdata.on('change', $.proxy(function() {this.update_plots();}, this));
+	this.lchos.on('change', $.proxy(function() {this.update_pspot();}, this));
 
+	this.update_pspot();
 }

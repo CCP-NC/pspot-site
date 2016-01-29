@@ -31,15 +31,29 @@
         </div>
 
         <div class="pspot_infobox">
-            <div class="info_name">
-                PSPOT.usp
+            <div class="info_header">
+                <span class="info_element">Element</span>&nbsp;-&nbsp;
+                <span class="info_name">PSPOT.usp</span>
             </div>
-            <div class="info_element">
-                Element
+            <div class="info_libchoose">
+            Choose library:&nbsp;
+            <select id="lib_choose_select">
+                <option value="this_library">this_library</option>
+            </select>
             </div>
             <div class="info_main">
                 <ul>
-                    <li><span class="li_header">Cutoffs:</span>
+                    <li><span class="li_header">Basic info:</span>
+                    <dl class="inline">
+                        <dt>Ionic charge:</dt>
+                        <dd id="info_ion_charge"></dd>
+                        <dt>XC functional:</dt>
+                        <dd id="info_xc"></dd>
+                        <dt>Solver:</dt>
+                        <dd id="info_solver"></dd>
+                    </dl>
+                    </li>
+                    <li><span class="li_header">Cutoffs (eV):</span>
                         <table>
                             <tr class="tr_header">
                                 <td>COARSE</td>
@@ -57,6 +71,9 @@
                     </li>
                     <li><span class="li_header">Pseudopotential string:</span><br>
                         <span id="pspot_line">Test</span>
+                    </li>
+                    <li><span class="li_header">Electronic structure:</span>
+                        <span id="info_elstruct"></span>
                     </li>
                     <!--
                     <li>
@@ -91,15 +108,15 @@
                             <li><a class="file_link" id="link_grace_beta">Grace - beta projectors</a></li>
                             <li><a class="file_link" id="link_grace_econv">Grace - energy convergence</a></li>
                             <li><a class="file_link" id="link_grace_pwave">Grace - partial waves</a></li>
-                        <ul>
+                        </ul>
                     </li>
-
+                </ul>
             </div>
-            <!-- This one acts as a link -->
-            <a class="back_button" href="index.html">
-                &lt; Back
-            </a>
         </div>
+        <!-- This one acts as a link -->
+        <a class="back_button" href="index.html">
+            &lt; Back
+        </a>
 
     	<script>
 
@@ -115,8 +132,7 @@
                     })
                 ).then(function() {
                     // Let's load the specific pseudopotential
-                    var pPage = new PspotPage(pspot_files);                    
-                    pPage.update_plots();
+                    var pPage = new PspotPage(pspot_files);
                 });
 
     		});

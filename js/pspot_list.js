@@ -8,8 +8,8 @@ PsPotList = function(pspot_files) {
 
 		var row = $("<tr>");
 		var link = $("<td>").append($("<a>").html(pspot.library).attr('href', pspot_url(pspot)));
-		var cutoff = $("<td>").html(pspot.cutoffs.FINE);
-		var xcfunc = $("<td>").html(pspot.xc);
+		var cutoff = $("<td>").html(pspot.CUTOFFS.FINE);
+		var xcfunc = $("<td>").html(pspot.LEVEL_THEORY);
 
 		return row.append(link).append(cutoff).append(xcfunc);
 	}

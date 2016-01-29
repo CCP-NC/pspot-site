@@ -1,3 +1,17 @@
+function makeUrl(base_url, params) {
+	// Build an URL with the given parameters (passed as JS object)
+	var url = base_url;
+	if (params != null) {
+		url += '?';
+		for (p in params) {
+			url += p + '=' + params[p] + '&';
+		}
+		// Remove the last &
+		url = url.slice(0, url.length-1);
+	}
+    return url;
+}
+
 function urlParams() {
 	// Get the URL parameters in object form
 

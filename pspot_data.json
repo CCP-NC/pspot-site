@@ -1,98 +1,534 @@
 {
   "H": {
     "default": {
-      "cutoffs": {
-        "MEDIUM": 163.0, 
-        "FINE": 218.0, 
-        "COARSE": 54.0, 
-        "EXTREME": 348.0
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 54, 
+        "EXTREME": 348
       }, 
-      "pspot_string": "1|0.8|0.8|0.6|2|6|8|10(qc=6)", 
-      "name": "H_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/H", 
-      "elem": "H", 
+      "RINNER_AUGCH": 0.599, 
+      "NUM_BETA": 2, 
       "library": "test_library", 
-      "file": "H_OTF.usp"
+      "ELEMENT": "H", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -0.2337, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 1.0, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.2337, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }
+      }
     }, 
     "test_library": {
-      "cutoffs": {
-        "MEDIUM": 163.0, 
-        "FINE": 218.0, 
-        "COARSE": 54.0, 
-        "EXTREME": 348.0
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 54, 
+        "EXTREME": 348
       }, 
-      "pspot_string": "1|0.8|0.8|0.6|2|6|8|10(qc=6)", 
-      "name": "H_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/H", 
-      "elem": "H", 
+      "RINNER_AUGCH": 0.599, 
+      "NUM_BETA": 2, 
       "library": "test_library", 
-      "file": "H_OTF.usp"
+      "ELEMENT": "H", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -0.2337, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 1.0, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.2337, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }
+      }
+    }, 
+    "another_library": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 54, 
+        "EXTREME": 348
+      }, 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/another_library/H", 
+      "NUM_BETA": 1, 
+      "library": "another_library", 
+      "ELEMENT": "H", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -0.2337, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 1.0, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.2337, 
+          "L": 0, 
+          "NORM": 1, 
+          "RC": 0.8027
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 0.8027
+        }
+      }
     }
   }, 
   "C": {
     "default": {
-      "cutoffs": {
-        "MEDIUM": 272.0, 
-        "FINE": 327.0, 
-        "COARSE": 163.0, 
-        "EXTREME": 522.0
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 327, 
+        "COARSE": 163, 
+        "EXTREME": 522
       }, 
-      "pspot_string": "2|1.4|1.4|1.3|6|10|12|20:21(qc=6)", 
-      "name": "C_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/C", 
-      "elem": "C", 
+      "RINNER_AUGCH": 1.3051, 
+      "NUM_BETA": 4, 
       "library": "test_library", 
-      "file": "C_OTF.usp"
+      "ELEMENT": "C", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -9.9523, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.5014, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.1992, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "PARTIAL_COREC": 1.3051, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.5014, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -0.1992, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }
+      }
     }, 
     "test_library": {
-      "cutoffs": {
-        "MEDIUM": 272.0, 
-        "FINE": 327.0, 
-        "COARSE": 163.0, 
-        "EXTREME": 522.0
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 327, 
+        "COARSE": 163, 
+        "EXTREME": 522
       }, 
-      "pspot_string": "2|1.4|1.4|1.3|6|10|12|20:21(qc=6)", 
-      "name": "C_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/C", 
-      "elem": "C", 
+      "RINNER_AUGCH": 1.3051, 
+      "NUM_BETA": 4, 
       "library": "test_library", 
-      "file": "C_OTF.usp"
+      "ELEMENT": "C", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -9.9523, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.5014, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.1992, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "PARTIAL_COREC": 1.3051, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.5014, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -0.1992, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }
+      }
+    }, 
+    "another_library": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 327, 
+        "COARSE": 163, 
+        "EXTREME": 522
+      }, 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/another_library/C", 
+      "NUM_BETA": 2, 
+      "library": "another_library", 
+      "ELEMENT": "C", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -9.9523, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.5014, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.1992, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "PARTIAL_COREC": 1.3051, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.5014, 
+          "L": 0, 
+          "NORM": 1, 
+          "RC": 1.3951
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -0.1992, 
+          "L": 1, 
+          "NORM": 1, 
+          "RC": 1.3951
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.3951
+        }
+      }
     }
   }, 
   "O": {
     "default": {
-      "cutoffs": {
-        "MEDIUM": 435.0, 
-        "FINE": 490.0, 
-        "COARSE": 354.0, 
-        "EXTREME": 784.0
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 490, 
+        "COARSE": 354, 
+        "EXTREME": 784
       }, 
-      "pspot_string": "2|1.0|1.3|0.7|13|16|18|20:21(qc=7)", 
-      "name": "O_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/O", 
-      "elem": "O", 
+      "RINNER_AUGCH": 0.7013, 
+      "NUM_BETA": 4, 
       "library": "test_library", 
-      "file": "O_OTF.usp"
+      "ELEMENT": "O", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -18.7748, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.8729, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.338, 
+          "OCCUPATION": 4.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 0.7013, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.8729, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -0.338, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.0036
+        }
+      }
     }, 
     "test_library": {
-      "cutoffs": {
-        "MEDIUM": 435.0, 
-        "FINE": 490.0, 
-        "COARSE": 354.0, 
-        "EXTREME": 784.0
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 490, 
+        "COARSE": 354, 
+        "EXTREME": 784
       }, 
-      "pspot_string": "2|1.0|1.3|0.7|13|16|18|20:21(qc=7)", 
-      "name": "O_OTF", 
-      "xc": "LDA", 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
       "basepath": "graphs/test_library/O", 
-      "elem": "O", 
+      "RINNER_AUGCH": 0.7013, 
+      "NUM_BETA": 4, 
       "library": "test_library", 
-      "file": "O_OTF.usp"
+      "ELEMENT": "O", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -18.7748, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.8729, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.338, 
+          "OCCUPATION": 4.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 0.7013, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.8729, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -0.338, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 0.25, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.0036
+        }
+      }
+    }, 
+    "another_library": {
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 490, 
+        "COARSE": 354, 
+        "EXTREME": 784
+      }, 
+      "LEVEL_THEORY": "LDA", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/another_library/O", 
+      "NUM_BETA": 2, 
+      "library": "another_library", 
+      "ELEMENT": "O", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -18.7748, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -0.8729, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -0.338, 
+          "OCCUPATION": 4.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 0.7013, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -0.8729, 
+          "L": 0, 
+          "NORM": 1, 
+          "RC": 1.2995
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -0.338, 
+          "L": 1, 
+          "NORM": 1, 
+          "RC": 1.2995
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.0036
+        }
+      }
     }
   }
 }
