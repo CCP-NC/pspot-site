@@ -93,7 +93,7 @@ def run_gnuplot(pspot):
     gp_file = gp_template
     # Now run the necessary substitutions
     # First the potential name
-    gp_file = gp_file.replace("<pspot.elem>", pspot['elem'])
+    gp_file = gp_file.replace("<pspot.elem>", pspot['ELEMENT'])
     # The maximum X value
     gp_file = gp_file.replace("<x_max>", str(max(rcs)*1.2))
     # The local radius
@@ -110,7 +110,7 @@ def run_gnuplot(pspot):
             scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(projs[b]['RC'])) for b in beta_ch])
             plot_string = ', "" '.join(["u 1:{0} w l ls {1} notitle".format(b+1, j+1) for j, b in enumerate(beta_ch)])
         elif i == projs['LOC']['L']:
-            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['elem'], pspot_info['NUM_BETA']+3)
+            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['ELEMENT'], pspot_info['NUM_BETA']+3)
             scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]\n'
             scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 100'.format(str(projs['LOC']['RC']))
             plot_string = 'u 1:{0} w l ls 101 notitle, "" u 1:{1} w l ls 1 notitle'.format(pspot_info['NUM_BETA']+2, pspot_info['NUM_BETA']+3)
@@ -338,11 +338,11 @@ for lib_name in pspot_library_dict:
 
     for el in lib:
         
-        # Actually load the file to gather info
-        el_fname = os.path.join(libdir, '{0}_OTF.usp'.format(el))
+        # Load the info file for all useful values
+        el_fname = os.path.join(libdir, '{0}_OTF.info.yml'.format(el))
         try:
-            pspot = USPpspot(el_fname)
-        except (IOError, ValueError) as e:
+            pspot = yaml.safe_load(open(el_fname))
+        except (IOError, yaml.error.MarkedYAMLError) as e:
             # Something didn't work, skip
             sys.stderr.write("Parsing of file {0} failed.\nDetails: {1}\nSkipping...\n".format(el_fname, e))
             continue
@@ -350,7 +350,7 @@ for lib_name in pspot_library_dict:
         if el not in pspot_elem_dict:
             pspot_elem_dict[el] = {'default': None}
 
-        pspot_elem_dict[el][lib_name] = pspot.__dict__()
+        pspot_elem_dict[el][lib_name] = pspot
         # Add some information
         pspot_elem_dict[el][lib_name]['library'] = lib_name
         # This one forms the basis for all related files (plots etc.)

@@ -17,11 +17,13 @@
         <script src="js/resizing.js"></script>
         <script src="js/info_box.js"></script>
         <script src="js/pspot_list.js"></script>
+        <script src="js/url_params.js"></script>
 
         <!-- Useful snippets -->
         <script>
             function pspot_url(pspot) {
-                return "pspot.html?lib=" + pspot.library + "&el=" + pspot.elem;
+                return makeUrl('pspot.html', {'lib': pspot.library,
+                                              'el': pspot.ELEMENT});
             }
         </script>
 
