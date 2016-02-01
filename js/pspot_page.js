@@ -65,6 +65,21 @@ var PspotPage = function(pspot_files) {
 			$('#cut_val_' + cut.toLowerCase()).html(this.pspot.CUTOFFS[cut]);
 		}
 
+		// Compile the Beta projectors table
+		var btab = $('#beta_proj_table');
+		btab.find('tr:not(.tr_header)').remove();
+		for (proj in this.pspot.PROJECTORS) {
+			var proj_info = this.pspot.PROJECTORS[proj];
+			var row = $('<tr>');
+			row.append($('<td>').html(proj));
+			row.append($('<td>').html(proj_info.L));
+			row.append($('<td>').html(proj_info.E));
+			row.append($('<td>').html(proj_info.RC));
+			row.append($('<td>').html(proj_info.SCHEME));
+			row.append($('<td>').html(proj_info.NORM));
+			btab.append(row);
+		}
+
 		// Now update the links
 		dtypes = ['beta', 'econv', 'pwave'];
 		for (var i = 0; i < 3; ++i) {
