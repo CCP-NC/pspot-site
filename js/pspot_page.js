@@ -33,6 +33,7 @@ var PspotPage = function(pspot_files) {
 
 		$('.info_name').html(this.pspot.library);
 		$('.info_element').html(this.pspot.ELEMENT);
+		console.log(this.pspot);
 		$('#pspot_line').html(this.pspot.pspot_string);
 
 		$('#info_ion_charge').html(this.pspot.IONIC_CHARGE);
@@ -68,15 +69,23 @@ var PspotPage = function(pspot_files) {
 		// Compile the Beta projectors table
 		var btab = $('#beta_proj_table');
 		btab.find('tr:not(.tr_header)').remove();
+		proj_legend_ind = {}; // Keep track of each channel's latest legend index
 		for (proj in this.pspot.PROJECTORS) {
 			var proj_info = this.pspot.PROJECTORS[proj];
 			var row = $('<tr>');
+			if (!(proj_info.L in proj_legend_ind))
+				proj_legend_ind[proj_info.L] = 1;
+			else 
+				proj_legend_ind[proj_info.L] += 1;
+			var l_name = "spdf"[proj_info.L];
+			var p_type = "UN"[proj_info.NORM];
 			row.append($('<td>').html(proj));
-			row.append($('<td>').html(proj_info.L));
+			row.append($('<td>').html(l_name));
 			row.append($('<td>').html(proj_info.E));
 			row.append($('<td>').html(proj_info.RC));
 			row.append($('<td>').html(proj_info.SCHEME));
-			row.append($('<td>').html(proj_info.NORM));
+			row.append($('<td>').html(p_type));
+			row.append($('<td>').addClass('legend_col_' + proj_legend_ind[proj_info.L]).html('&#9632;'));
 			btab.append(row);
 		}
 

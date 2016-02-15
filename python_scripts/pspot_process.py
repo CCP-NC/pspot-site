@@ -106,7 +106,7 @@ def run_gnuplot(pspot):
         if i < projs['LOC']['L']:
             # Add the arrow
             # Compile list of projectors
-            beta_ch = [p for p in projs if projs[p]['L'] == i]
+            beta_ch = sorted([p for p in projs if projs[p]['L'] == i]) # Ensure that they are in order (should be already warranted, but...)
             scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(projs[b]['RC'])) for b in beta_ch])
             plot_string = ', "" '.join(["u 1:{0} w l ls {1} notitle".format(b+1, j+1) for j, b in enumerate(beta_ch)])
         elif i == projs['LOC']['L']:
@@ -126,7 +126,7 @@ def run_gnuplot(pspot):
         gp_file = gp_file.replace("<{0}_pwave_title>".format(ch), ch + (" local" if i == projs['LOC']['L'] else ''))
         if i < projs['LOC']['L']:
             # Compile list of projectors
-            beta_ch = [p for p in projs if projs[p]['L'] == i]
+            beta_ch = sorted([p for p in projs if projs[p]['L'] == i]) # Ensure that they are in order (should be already warranted, but...)
             scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(projs[b]['RC'])) for b in beta_ch])
             plot_string = ', "" '.join(['u 1:{0} w l ls {2} notitle, "" u 1:{1} w l ls {3} notitle'.format(2*b, 2*b+1, j+101, j+1) for j, b in enumerate(beta_ch)])
         elif i == projs['LOC']['L']:
@@ -353,6 +353,7 @@ for lib_name in pspot_library_dict:
         pspot_elem_dict[el][lib_name] = pspot
         # Add some information
         pspot_elem_dict[el][lib_name]['library'] = lib_name
+        pspot_elem_dict[el][lib_name]['pspot_string'] = lib[el]
         # This one forms the basis for all related files (plots etc.)
         # with different terminations/extensions
         pspot_elem_dict[el][lib_name]['basepath'] = os.path.join(config['graph_path'], lib_name, el)

@@ -284,7 +284,7 @@ dl.inline dt{
 
 .pspot_plotbox {
     position: absolute;
-    width: 70%;
+    width: 60%;
     height: 100%;
     display: table-cell;
 
@@ -293,10 +293,10 @@ dl.inline dt{
 
 .pspot_infobox {
     position: absolute;
-    width: 30%;
+    width: 40%;
     top: 0;
     bottom: 20pt;
-    left: 70%;
+    left: 60%;
 
     background-color: #eeeeee;
 
@@ -380,8 +380,8 @@ dl.inline dt{
 
     position: absolute;
     height: 20pt;
-    width: 30%;
-    left: 70%;
+    width: 40%;
+    left: 60%;
     bottom: 0;
 
     font-weight: bold;
@@ -417,4 +417,40 @@ dl.inline dt{
 
 .note {
     font-size: 12pt;
+}
+
+.legend_col_1 {
+    color: #ee0000;
+}
+
+.legend_col_2 {
+    color: #0000ee;
+}
+
+.legend_col_3 {
+    color: #00cc66;
+}
+
+.legend_col_4 {
+    color: #ddbb00;
+}
+
+.legend_col_5 {
+    color: #00bbdd;
+}
+
+.legend_col_6 {
+    color: #dd00bb;
+}
+
+.legend_col_7 {
+    color: #ddbb00;
+}
+
+.legend_col_8 {
+    color: #66ddee;
+}
+
+.legend_col_9 {
+    color: #777777;
 }
