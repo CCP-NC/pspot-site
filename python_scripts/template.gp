@@ -72,11 +72,14 @@ unset title
 set autoscale
 set xlabel "Cutoff energy (eV)"
 set ylabel "Energy error (eV/atom)"
-set ytics 1
+set format y "%.1e"
+set ytics nomirror
+
 stats "<pspot.elem>_OTF.econv.dat" u 2:3 nooutput
 set yrange [(STATS_min_x-(STATS_max_x-STATS_min_x)*0.1):(STATS_max_x+(STATS_max_x-STATS_min_x)*0.1)]
 plot "<pspot.elem>_OTF.econv.dat" u 1:2 w l lc 0 lt 1 notitle, 2 w l ls 101 ti "Coarse", 0.3 w l ls 102 ti "Medium", 0.1 w l ls 103 ti "Fine", 0.01 w l ls 104 ti "Extreme"
 set key bottom left
+
 set ylabel "Log10 Energy error (eV/atom)"
 set yrange [(STATS_min_y-(STATS_max_y-STATS_min_y)*0.1):(STATS_max_y+(STATS_max_y-STATS_min_y)*0.1)]
 plot "<pspot.elem>_OTF.econv.dat" u 1:3 w l lc 0 lt 1 notitle, log10(2) w l ls 101 ti "Coarse", log10(0.3) w l ls 102 ti "Medium", log10(0.1) w l ls 103 ti "Fine", log10(0.01) w l ls 104 ti "Extreme"
