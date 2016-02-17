@@ -83,10 +83,8 @@ def run_gnuplot(pspot):
 
     global config, main_abspath, gp_template
 
-    # Parse the YAML info file for relevant quantities
-    pspot_info = yaml.load(open(os.path.join(main_abspath, pspot['basepath'] + '_OTF.info.yml')))
     # Some useful shortcuts
-    projs = pspot_info['PROJECTORS']
+    projs = pspot['PROJECTORS']
     rcs = [projs[p]['RC'] for p in projs]
 
     # Write the Gnuplot file for plotting
@@ -110,10 +108,10 @@ def run_gnuplot(pspot):
             scale_string = '\n'.join(['set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(projs[b]['RC'])) for b in beta_ch])
             plot_string = ', "" '.join(["u 1:{0} w l ls {1} notitle".format(b+1, j+1) for j, b in enumerate(beta_ch)])
         elif i == projs['LOC']['L']:
-            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['ELEMENT'], pspot_info['NUM_BETA']+3)
+            scale_string = 'stats "{0}_OTF.beta.dat" u {1} nooutput\n'.format(pspot['ELEMENT'], pspot['NUM_BETA']+3)
             scale_string += 'set yrange [(1.1*STATS_min < 0.9*STATS_min ? 1.1*STATS_min : 0.9*STATS_min) : 0.0]\n'
             scale_string += 'set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 100'.format(str(projs['LOC']['RC']))
-            plot_string = 'u 1:{0} w l ls 101 notitle, "" u 1:{1} w l ls 1 notitle'.format(pspot_info['NUM_BETA']+2, pspot_info['NUM_BETA']+3)
+            plot_string = 'u 1:{0} w l ls 101 notitle, "" u 1:{1} w l ls 1 notitle'.format(pspot['NUM_BETA']+2, pspot['NUM_BETA']+3)
         else:
             plot_string = ' u 1:(0) w l ls 0 notitle'
         gp_file = gp_file.replace("<{0}_beta_scale>".format(ch), scale_string)
@@ -131,7 +129,7 @@ def run_gnuplot(pspot):
             plot_string = ', "" '.join(['u 1:{0} w l ls {2} notitle, "" u 1:{1} w l ls {3} notitle'.format(2*b, 2*b+1, j+101, j+1) for j, b in enumerate(beta_ch)])
         elif i == projs['LOC']['L']:
             scale_string = 'set arrow from {0}, graph 0 to {0}, graph 1 nohead ls 0'.format(str(projs['LOC']['RC']))
-            plot_string = 'u 1:{0} w l ls 1 notitle, "" u 1:{1} w l ls 101 notitle'.format(pspot_info['NUM_BETA']*2+2, pspot_info['NUM_BETA']*2+3)
+            plot_string = 'u 1:{0} w l ls 1 notitle, "" u 1:{1} w l ls 101 notitle'.format(pspot['NUM_BETA']*2+2, pspot['NUM_BETA']*2+3)
         else:
             scale_string = 'set yrange [-1:0]'
             plot_string = ' u 1:(0) w l ls 0 notitle'
@@ -346,6 +344,15 @@ for lib_name in pspot_library_dict:
             # Something didn't work, skip
             sys.stderr.write("Parsing of file {0} failed.\nDetails: {1}\nSkipping...\n".format(el_fname, e))
             continue
+
+        # This horribly hackish solution offered you by PyYAML being not only dumb enough to decide that the string "No" is actually
+        # a Boolean meaning False rather than the chemical symbol of Nobelium, but also inconsistent enough that apparently the version
+        # I have installed on my office computer can't even tell when the string is surrounded by effin' QUOTES!
+        # Of course I could just update it but never know when, where and by whom this is going to be ran in the future, 
+        # so better safe than sorry... I don't think any element with chemical symbol "Yes" is going to be relevant in the close future
+        # anyway.
+        if type(pspot['ELEMENT']) is bool:
+            pspot['ELEMENT'] = "No"
 
         if el not in pspot_elem_dict:
             pspot_elem_dict[el] = {'default': None}

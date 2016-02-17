@@ -180,13 +180,13 @@ dl.inline dt{
     margin: 15px;
 }
 
-.info_box .info_pspot, .info_box .info_nopspot {
+.info_box #info_pspot, .info_box #info_nopspot, .info_box #info_pspot_nodefault {
 
     text-align: left;
     margin: 15px;
 }
 
-.info_box .info_nopspot {
+.info_box .not_found {
     color: #bb0000;
 }
 

@@ -16,17 +16,25 @@ InfoBox = function(pspot_files, ppList) {
         // Now check if there are any pseudopotentials
         if (el.symbol in pspot_files) {
 
-            var pspot_page_link = $("<a>").attr("href", pspot_url(pspot_files[el.symbol].default))
-                                          .html(pspot_files[el.symbol].default.library);
-            this.ibox.find('.info_pspot_default').html('').append(pspot_page_link);
+            // Is there a default pseudopotential?
+            if (pspot_files[el.symbol].default != null) {
+                var pspot_page_link = $("<a>").attr("href", pspot_url(pspot_files[el.symbol].default))
+                                              .html(pspot_files[el.symbol].default.library);
+                this.ibox.find('#info_pspot_default').html('').append(pspot_page_link);
+                this.ibox.find('#info_pspot_nodefault').css("display", "none");
+            }
+            else {
+                this.ibox.find('#info_pspot_nodefault').css("display", "block");
+                this.ibox.find('#info_pspot_default').css("display", "none");                
+            }
 
-            this.ibox.find('.info_nopspot').css("display", "none");
-            this.ibox.find('.info_pspot').css("display", "block");
+            this.ibox.find('#info_nopspot').css("display", "none");
+            this.ibox.find('#info_pspot').css("display", "block");
             this.ibox.find('.pspot_list_show').on('click', function() {ppList.compile(el.symbol); ppList.show();});
         }
         else {
-            this.ibox.find('.info_nopspot').css("display", "block");
-            this.ibox.find('.info_pspot').css("display", "none");
+            this.ibox.find('#info_nopspot').css("display", "block");
+            this.ibox.find('#info_pspot').css("display", "none");
         }
 
     }
