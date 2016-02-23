@@ -247,8 +247,7 @@ args = parser.parse_args()
 config = {
     "main_relpath": "..",
     "pspot_path": "data/libraries",
-    "pspot_extension": "usp",
-    "pspot_name_separator": "_",
+    "delta_path": "data/delta_test",
     "default_library": "test_library",
     "graph_path": "graphs",
     "castep_command": "castep.serial",
@@ -294,6 +293,10 @@ pspot_list = []
 
 # Clear the folder containing the calculations
 if not args.nocastep and cell_template is not None:
+    # Ask for confirmation, this is some serious shit
+    ans = raw_input("To run the calculations the entire content of graph_path will be deleted, continue [y/N]?")
+    if ans.lower() != 'y':
+        sys.exit("Execution interrupted")
     clear_folder(os.path.join(main_abspath, config['graph_path']))
 
 for lib_fname in pspot_library_list:
@@ -334,6 +337,12 @@ for lib_name in pspot_library_dict:
     lib = pspot_library_dict[lib_name]
     libdir = lib_dirname(lib_name)
 
+    # Also open the delta test info if present
+    try:
+        delta_info = yaml.safe_load(open(os.path.join(main_abspath, config['delta_path'], lib_name + "_delta.yml")))
+    except IOError:
+        delta_info = None
+
     for el in lib:
         
         # Load the info file for all useful values
@@ -364,6 +373,10 @@ for lib_name in pspot_library_dict:
         # This one forms the basis for all related files (plots etc.)
         # with different terminations/extensions
         pspot_elem_dict[el][lib_name]['basepath'] = os.path.join(config['graph_path'], lib_name, el)
+        if delta_info is not None and el in delta_info:
+            pspot_elem_dict[el][lib_name]['delta_info'] = delta_info[el]
+        else:
+            pspot_elem_dict[el][lib_name]['delta_info'] = []            
 
         if lib_name == config['default_library']:
             pspot_elem_dict[el]['default'] = pspot_elem_dict[el][lib_name]
