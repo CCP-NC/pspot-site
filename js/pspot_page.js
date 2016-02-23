@@ -89,6 +89,18 @@ var PspotPage = function(pspot_files) {
 			btab.append(row);
 		}
 
+		// Delta test - do we have info on it?
+		var dtable = $('#delta_test');
+		if (this.pspot.delta_info.length == 3) {
+			dtable.css('display', 'default');
+			dtable.find('#delta_d').html(this.pspot.delta_info[0]);
+			dtable.find('#delta_dr').html(this.pspot.delta_info[1]);
+			dtable.find('#delta_d1').html(this.pspot.delta_info[2]);
+		}
+		else {
+			dtable.css('display', 'none');
+		}
+
 		// Now update the links
 		dtypes = ['beta', 'econv', 'pwave'];
 		for (var i = 0; i < 3; ++i) {
