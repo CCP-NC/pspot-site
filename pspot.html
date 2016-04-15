@@ -75,6 +75,22 @@
                     <li><span class="li_header">Valence electronic structure:</span>
                         <span id="info_elstruct"></span>
                     </li>
+                    <li id="delta_test">
+                        <span class="li_header">Delta test results</span><br>
+                        <span class="note">(for more info about the Delta test check the website of the <a target="_blank" href="https://molmod.ugent.be/deltacodesdft">Center of Molecular Modeling</a>)</span>
+                        <table id="delta_test_table">
+                            <tr class="tr_header">
+                                <td>&Delta;-value (mEV/atom)</td>
+                                <td>&Delta;-value (%)</td>
+                                <td>&Delta;<sub>1</sub></td>
+                            </tr>
+                            <tr>
+                                <td id="delta_d"></td>
+                                <td id="delta_dr"></td>
+                                <td id="delta_d1"></td>
+                            </tr>
+                        </table>
+                    </li>
                     <!--
                     <li>
                         <span class="li_header">Plot type:</span>
@@ -93,6 +109,20 @@
                         </select>
                     </li>
                     <li>
+                        <span class="li_header">Projector details</span>
+                        <table id="beta_proj_table">
+                            <tr class="tr_header">
+                                <td title="Projector index">Beta</td>
+                                <td title="Angular momentum">l</td>
+                                <td title="Energy">E (eV)</td>
+                                <td title="Cutoff radius">Rc (a.u.)</td>
+                                <td title="Pseudisation scheme">Scheme</td>
+                                <td title="Type of the given projector. N = Norm-Conserving, U = Ultrasoft">Type</td>
+                                <td>Legend</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
                         <span class="li_header">Raw data files:</span>
                         <ul>
                             <li><a class="file_link" id="link_beta">Beta projectors</a></li>
@@ -109,36 +139,6 @@
                             <li><a class="file_link" id="link_grace_econv">Grace - energy convergence</a></li>
                             <li><a class="file_link" id="link_grace_pwave">Grace - partial waves</a></li>
                         </ul>
-                    </li>
-                    <li>
-                        <span class="li_header">Projector details</span>
-                        <table id="beta_proj_table">
-                            <tr class="tr_header">
-                                <td title="Projector index">Beta</td>
-                                <td title="Angular momentum">l</td>
-                                <td title="Energy">E (eV)</td>
-                                <td title="Cutoff radius">Rc (a.u.)</td>
-                                <td title="Pseudisation scheme">Scheme</td>
-                                <td title="Type of the given projector. N = Norm-Conserving, U = Ultrasoft">Type</td>
-                                <td>Legend</td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li id="delta_test">
-                        <span class="li_header">Delta test results</span><br>
-                        <span class="note">(for more info about the Delta test check the website of the <a target="_blank" href="https://molmod.ugent.be/deltacodesdft">Center of Molecular Modeling</a>)</span>
-                        <table id="delta_test_table">
-                            <tr class="tr_header">
-                                <td>&Delta;-value (mEV/atom)</td>
-                                <td>&Delta;-value (%)</td>
-                                <td>&Delta;<sub>1</sub></td>
-                            </tr>
-                            <tr>
-                                <td id="delta_d"></td>
-                                <td id="delta_dr"></td>
-                                <td id="delta_d1"></td>
-                            </tr>
-                        </table>
                     </li>
                 </ul>
             </div>
