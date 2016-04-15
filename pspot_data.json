@@ -2960,6 +2960,85 @@
           "RC": 0.99642366
         }
       }
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 218, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "2|1.4|1.4|1.2|7|8|10|10U:20:21(compat7){2p0.05}", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Be", 
+      "RINNER_AUGCH": 1.1970435, 
+      "NUM_BETA": 5, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Be", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -105.80494, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -5.2778803, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1.717334, 
+          "OCCUPATION": 0.05
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "delta_info": [], 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -105.80494, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -5.2778803, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": -1.717334, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.4025106
+        }
+      }
     }
   }, 
   "Ba": {
@@ -4866,6 +4945,54 @@
           "RC": 0.59901849
         }
       }
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 54, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "1|0.8|0.8|0.6|2|6|8|10(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/H", 
+      "RINNER_AUGCH": 0.59901849, 
+      "NUM_BETA": 2, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "H", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -6.4926844, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 1.0, 
+      "delta_info": [], 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -6.4926844, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.80271957
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.80271957
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 0.80271957
+        }
+      }
     }
   }, 
   "P": {
@@ -5142,6 +5269,89 @@
         8.7, 
         1.319
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 136, 
+        "FINE": 163, 
+        "COARSE": 82, 
+        "EXTREME": 261
+      }, 
+      "pspot_string": "2|1.8|1.8|1.5|3|5|6|30:31:32LGG(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/P", 
+      "RINNER_AUGCH": 1.5045692, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "P", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -2084.1694, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -173.99116, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -13.969338, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -124.49343, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -5.5068193, 
+          "OCCUPATION": 3.0
+        }
+      ], 
+      "IONIC_CHARGE": 5.0, 
+      "PARTIAL_COREC": 1.5045692, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -13.969338, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.807344
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.807344
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -5.5068193, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.807344
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.807344
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.807344
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Os": {
@@ -5932,6 +6142,163 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 435, 
+        "COARSE": 327, 
+        "EXTREME": 697
+      }, 
+      "pspot_string": "2|2.1|2.1|1.3|12|14|16|60U:70U:61:53(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Es", 
+      "RINNER_AUGCH": 1.3010794, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Es", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -139366.14, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -26817.487, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -6925.0066, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -1836.8094, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -419.61925, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -58.158344, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "7s", 
+          "ENERGY": -4.0082929, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -21600.89, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -5503.0902, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -1374.4552, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -272.1121, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "6p", 
+          "ENERGY": -24.52819, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -4418.1152, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -961.18273, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -131.47285, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -540.55915, 
+          "OCCUPATION": 14.0
+        }, 
+        {
+          "ORBITAL": "5f", 
+          "ENERGY": -4.5300081, 
+          "OCCUPATION": 11.0
+        }
+      ], 
+      "IONIC_CHARGE": 21.0, 
+      "PARTIAL_COREC": 1.3010794, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -58.158344, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.0082929, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -24.52819, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -4.5300081, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0921694
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ge": {
@@ -6260,6 +6627,118 @@
         2.5, 
         0.382
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 299, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "3|2.0|2.0|1.5|11|13|14|40:41:32(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ge", 
+      "RINNER_AUGCH": 1.5056319, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ge", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -10961.158, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1371.7921, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -168.49067, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -11.731459, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1198.7109, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -115.62047, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -3.895426, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -29.310857, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 14.0, 
+      "PARTIAL_COREC": 1.5056319, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -11.731459, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -3.895426, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -29.310857, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9988233
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Gd": {
@@ -6888,6 +7367,118 @@
         1.1, 
         0.166
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 299, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "3|2.0|2.0|1.5|11|13|14|40:41:32(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ga", 
+      "RINNER_AUGCH": 1.5032453, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ga", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -10229.95, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1262.3236, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -148.12575, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -8.9487112, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1098.8365, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -98.859301, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -2.5792013, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -19.154516, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 13.0, 
+      "PARTIAL_COREC": 1.5032453, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -8.9487112, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -2.5792013, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -19.154516, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9956558
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Pr": {
@@ -8189,6 +8780,79 @@
         3.0, 
         0.457
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 327, 
+        "COARSE": 163, 
+        "EXTREME": 522
+      }, 
+      "pspot_string": "2|1.4|1.4|1.3|6|10|12|20:21(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/C", 
+      "RINNER_AUGCH": 1.3050709, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "C", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -273.38002, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -13.750846, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -5.2854869, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "PARTIAL_COREC": 1.3050709, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -13.750846, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3950698
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3950698
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -5.2854869, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3950698
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3950698
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.3950698
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Pb": {
@@ -9362,6 +10026,128 @@
         4.0, 
         0.611
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 327, 
+        "FINE": 354, 
+        "COARSE": 272, 
+        "EXTREME": 566
+      }, 
+      "pspot_string": "3|2.0|2.0|1.5|10|12|13|40U:50U:41:42(compat7,qc=5.5){5s0.05}", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Pd", 
+      "RINNER_AUGCH": 1.4987868, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Pd", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -24166.0, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -3527.9398, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -635.73669, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -85.001701, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -3.0362113, 
+          "OCCUPATION": 0.05
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -3162.8851, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -515.74307, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -50.866371, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -325.18161, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -3.7130527, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 18.0, 
+      "PARTIAL_COREC": 1.4987868, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -85.001701, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.0362113, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -50.866371, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.7130527, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0063793
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Cd": {
@@ -9692,6 +10478,114 @@
         12.7, 
         1.951
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "1|2.2|2.2|1.6|8|10|11|50UU+0.1:42(compat7,qc=5,q0=4)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Cd", 
+      "RINNER_AUGCH": 1.6006878, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Cd", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -26525.71, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -3938.0448, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -733.96825, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -105.91784, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -5.6597212, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -3533.5065, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -601.27047, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -66.967501, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -393.63722, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -11.7331, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 1.6006878, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -5.6597212, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1970352
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -2.9385827, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1970352
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -11.7331, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1970352
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1970352
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1970352
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Po": {
@@ -10408,6 +11302,143 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 299, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "2|2.0|2.0|1.2|11|14|15|50U1.6:60U1.6:51U1.8U1.8:43(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Pm", 
+      "RINNER_AUGCH": 1.1981263, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Pm", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -45024.327, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -7320.3547, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1596.3264, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -317.39527, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -41.873317, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.5425995, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -6536.9298, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1350.3691, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -236.6992, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -22.672569, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1013.4161, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -122.75935, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -2.1538044, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 15.0, 
+      "PARTIAL_COREC": 1.1981263, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -41.873317, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6038935
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.5425995, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6038935
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -22.672569, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.802372
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.802372
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.1538044, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9919334
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9919334
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9919334
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Hs": {
@@ -11024,6 +12055,143 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 463, 
+        "COARSE": 381, 
+        "EXTREME": 740
+      }, 
+      "pspot_string": "2|2.1|2.0|1.3|14|16|17|50U:60U:51:43(compat7,qc=6.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ho", 
+      "RINNER_AUGCH": 1.2994558, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ho", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -55500.642, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -9283.28, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2073.3677, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -409.53016, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -50.378187, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.7891429, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -8223.4594, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1749.5604, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -302.99485, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -25.868508, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1339.0048, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -159.1568, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -3.145315, 
+          "OCCUPATION": 11.0
+        }
+      ], 
+      "IONIC_CHARGE": 21.0, 
+      "PARTIAL_COREC": 1.2994558, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -50.378187, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.7891429, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -25.868508, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.145315, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0042881
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.107052
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Hf": {
@@ -11491,6 +12659,148 @@
         7.0, 
         1.064
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.1|2.1|2.1|7|9|10|50U:60U:51:52(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Hf", 
+      "RINNER_AUGCH": 2.0959022, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Hf", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -65287.927, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -11165.382, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2544.0715, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -512.54559, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -67.015575, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -5.1084071, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -9803.1183, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2137.1635, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -379.07846, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -35.574066, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1655.8556, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -206.67068, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -2.6889862, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -16.834705, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 2.0959022, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -67.015575, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -5.1084071, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -35.574066, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.6889862, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0959022
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Hg": {
@@ -11937,6 +13247,134 @@
         65.7, 
         10.489
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "1|2.2|2.2|1.7|8|10|11|60:61P:52(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Hg", 
+      "RINNER_AUGCH": 1.7068027, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Hg", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -83187.084, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -14743.176, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -3498.5936, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -769.24608, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -118.1806, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -6.8167656, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -12711.027, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2911.593, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -576.84163, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -66.516039, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -2294.7172, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -348.74451, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -9.8605413, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -95.887644, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 1.7068027, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -6.8167656, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1915869
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1915869
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -9.8605413, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1915869
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1915869
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1915869
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "He": {
@@ -12085,6 +13523,54 @@
           "L": 1, 
           "NORM": 0, 
           "RC": 0.99728121
+        }
+      }
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 408, 
+        "FINE": 490, 
+        "COARSE": 245, 
+        "EXTREME": 784
+      }, 
+      "pspot_string": "1|0.8|0.8|0.8|9|15|18|10(compat7,qc=7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/He", 
+      "RINNER_AUGCH": 0.80276772, 
+      "NUM_BETA": 2, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "He", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -15.763796, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 2.0, 
+      "delta_info": [], 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -15.763796, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.80276772
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 0.80276772
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 0.80276772
         }
       }
     }
@@ -12417,6 +13903,163 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 408, 
+        "FINE": 435, 
+        "COARSE": 354, 
+        "EXTREME": 697
+      }, 
+      "pspot_string": "2|2.1|2.1|1.6|13|15|16|60U:70U:61:53(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Md", 
+      "RINNER_AUGCH": 1.5971127, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Md", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -146679.87, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -28457.856, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -7389.3843, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -1978.8796, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -455.25103, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -62.004182, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "7s", 
+          "ENERGY": -4.0861524, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -22694.464, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -5825.2718, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -1470.9355, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -292.17178, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "6p", 
+          "ENERGY": -25.258013, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -4675.5088, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -1032.7528, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -141.50082, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -592.46027, 
+          "OCCUPATION": 14.0
+        }, 
+        {
+          "ORBITAL": "5f", 
+          "ENERGY": -5.3871942, 
+          "OCCUPATION": 13.0
+        }
+      ], 
+      "IONIC_CHARGE": 23.0, 
+      "PARTIAL_COREC": 1.5971127, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -62.004182, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.0861524, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -25.258013, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -5.3871942, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1026557
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Mg": {
@@ -12692,6 +14335,84 @@
         6.5, 
         0.995
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 190, 
+        "FINE": 218, 
+        "COARSE": 163, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "2|1.6|2|1.4|6|7|8|30NH:21U:31UU:32LGG(compat7,qc=4.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Mg", 
+      "RINNER_AUGCH": 1.4048722, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Mg", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -1259.6493, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -79.845394, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -4.7054948, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -46.613805, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 8.0, 
+      "PARTIAL_COREC": 1.4048722, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -4.7054948, 
+          "L": 0, 
+          "NORM": 1, 
+          "RC": 1.9936951
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -46.613805, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9936951
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9936951
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9936951
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.6052797
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "K": {
@@ -13303,6 +15024,104 @@
         35.1, 
         5.341
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 218, 
+        "FINE": 245, 
+        "COARSE": 163, 
+        "EXTREME": 392
+      }, 
+      "pspot_string": "3|2.3|2.3|1.5|6|8|9|40N:32:41N(compat7,qc=4.5,q0=3){4s0.75,4p0.25}", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Mn", 
+      "RINNER_AUGCH": 1.5008898, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Mn", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -6438.1978, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -752.40047, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -94.462035, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -12.088649, 
+          "OCCUPATION": 0.75
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -638.6579, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -63.188528, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -7.3772513, 
+          "OCCUPATION": 0.25
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -15.247191, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 7.0, 
+      "PARTIAL_COREC": 1.5008898, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -12.088649, 
+          "L": 0, 
+          "NORM": 1, 
+          "RC": 2.2957991
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -7.3772513, 
+          "L": 1, 
+          "NORM": 1, 
+          "RC": 2.2957991
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -15.247191, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2957991
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2957991
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.2957991
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "O": {
@@ -13514,6 +15333,79 @@
         24.2, 
         3.689
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 490, 
+        "COARSE": 354, 
+        "EXTREME": 784
+      }, 
+      "pspot_string": "2|1.0|1.3|0.7|13|16|18|20:21(compat7,qc=7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/O", 
+      "RINNER_AUGCH": 0.70125528, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "O", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -514.69662, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -23.961557, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -9.0306292, 
+          "OCCUPATION": 4.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 0.70125528, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -23.961557, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995093
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.2995093
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -9.0306292, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995093
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.2995093
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.0035895
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Mt": {
@@ -14116,6 +16008,89 @@
         3.8, 
         0.579
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 109, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "2|1.7|1.7|1.1|4|6|8|30:31:32LGG(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/S", 
+      "RINNER_AUGCH": 1.0984905, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "S", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -2405.9338, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -211.70832, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -17.25645, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -156.50572, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -7.0087479, 
+          "OCCUPATION": 4.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 1.0984905, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -17.25645, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.694385
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.694385
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -7.0087479, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.694385
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.694385
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.694385
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "W": {
@@ -14590,6 +16565,148 @@
         4.3, 
         0.647
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 218, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.1|2.1|2.1|8|9|10|50U:60U:51:52(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/W", 
+      "RINNER_AUGCH": 2.1083782, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "W", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -69497.715, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -11995.032, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2762.5412, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -569.91162, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -79.072533, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -5.7129929, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -10489.14, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2316.6629, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -423.68433, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -43.202223, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1804.1801, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -238.43031, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -4.4803819, 
+          "OCCUPATION": 4.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -33.20693, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 14.0, 
+      "PARTIAL_COREC": 2.1083782, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -79.072533, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -5.7129929, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -43.202223, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -4.4803819, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1083782
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Zn": {
@@ -14903,6 +17020,113 @@
         3.4, 
         0.524
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 299, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "3|2.0|2.0|1.0|11|13|14|40:41:32(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Zn", 
+      "RINNER_AUGCH": 0.99872071, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Zn", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -9525.726, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1158.3309, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -129.23217, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -5.9788645, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1004.0285, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -83.402511, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -10.140449, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 0.99872071, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -5.9788645, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -10.140449, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9945687
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Eu": {
@@ -15183,6 +17407,143 @@
           "L": 3, 
           "NORM": 0, 
           "RC": 2.0963125
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0963125
+        }
+      }, 
+      "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 327, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "2|2.1|2.0|1.3|12|14|15|50U1.6:60U1.6:51U1.8U1.8:43(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Eu", 
+      "RINNER_AUGCH": 1.3036505, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Eu", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -48371.238, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -7943.1319, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1747.9209, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -346.99989, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -44.666113, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.6234048, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -7076.5832, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1478.2877, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -258.32251, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -23.774954, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1118.0095, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -134.8277, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -2.7182171, 
+          "OCCUPATION": 7.0
+        }
+      ], 
+      "IONIC_CHARGE": 17.0, 
+      "PARTIAL_COREC": 1.3036505, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -44.666113, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6056159
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.6234048, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6056159
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -23.774954, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8043074
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8043074
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.7182171, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9940722
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9940722
         }, 
         "LOC": {
           "SCHEME": "pn", 
@@ -15572,6 +17933,128 @@
         3.0, 
         0.449
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.1|2.1|1.8|7|9|10|40U:50U:41:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Zr", 
+      "RINNER_AUGCH": 1.7969415, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Zr", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -17825.108, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2469.841, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -404.76994, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -54.504885, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -4.4395058, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -2202.4552, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -317.6577, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -32.461697, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -174.70752, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -3.5990408, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 1.7969415, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -54.504885, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.4395058, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -32.461697, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.5990408, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1052294
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Er": {
@@ -15852,6 +18335,143 @@
           "L": 3, 
           "NORM": 0, 
           "RC": 2.0934391
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0934391
+        }
+      }, 
+      "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 299, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "2|2.1|2.0|1.1|11|13|14|50U:60U:51:43(compat7,qc=5.75)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Er", 
+      "RINNER_AUGCH": 1.1019991, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Er", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -57376.756, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -9638.9837, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2159.7225, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -426.00684, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -51.863006, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.8320029, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -8524.5382, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1820.7773, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -314.56113, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -26.385686, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1396.8306, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -165.35268, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -3.1389929, 
+          "OCCUPATION": 12.0
+        }
+      ], 
+      "IONIC_CHARGE": 22.0, 
+      "PARTIAL_COREC": 1.1019991, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -51.863006, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0080032
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.8320029, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0080032
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -26.385686, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0080032
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0080032
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.1389929, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0080032
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0080032
         }, 
         "LOC": {
           "SCHEME": "pn", 
@@ -16189,6 +18809,113 @@
         3.8, 
         0.581
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "3|2.2|2.0|1.5|8|10|11|40:41:32(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ni", 
+      "RINNER_AUGCH": 1.505919, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ni", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -8212.1957, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -981.83092, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -111.05919, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -5.6430296, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -844.68297, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -71.388009, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -8.8741389, 
+          "OCCUPATION": 8.0
+        }
+      ], 
+      "IONIC_CHARGE": 10.0, 
+      "PARTIAL_COREC": 1.505919, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -5.6430296, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -8.8741389, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9992082
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1911396
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "No": {
@@ -16801,6 +19528,84 @@
         30.2, 
         4.619
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 517, 
+        "FINE": 571, 
+        "COARSE": 435, 
+        "EXTREME": 914
+      }, 
+      "pspot_string": "2|1.3|1.3|1.0|16|19|21|20U:30U:21(compat7,qc=7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Na", 
+      "RINNER_AUGCH": 1.0018816, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Na", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -1033.7102, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -56.753098, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2.7439511, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -28.672878, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 9.0, 
+      "PARTIAL_COREC": 1.0018816, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -56.753098, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.297273
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -2.7439511, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.297273
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -28.672878, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.297273
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.297273
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.297273
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Nb": {
@@ -17702,6 +20507,79 @@
         82.0, 
         13.718
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 299, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "2|1.6|1.6|1.2|11|13|14|20:21(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ne", 
+      "RINNER_AUGCH": 1.1978656, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ne", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -830.80379, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -36.405058, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -13.334059, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 8.0, 
+      "PARTIAL_COREC": 1.1978656, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -36.405058, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6036148
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6036148
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -13.334059, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.6036148
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.6036148
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.6036148
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Np": {
@@ -19332,6 +22210,79 @@
         9.3, 
         1.417
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 82, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "2|1.4|1.4|1.0|3|6|8|20:21(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/B", 
+      "RINNER_AUGCH": 0.99840028, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "B", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -180.58994, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -9.4430719, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -3.6068196, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 3.0, 
+      "PARTIAL_COREC": 0.99840028, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -9.4430719, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.4052418
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.4052418
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -3.6068196, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.4052418
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.4052418
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.4052418
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "F": {
@@ -19550,6 +22501,79 @@
         15.5, 
         2.36
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 435, 
+        "FINE": 463, 
+        "COARSE": 354, 
+        "EXTREME": 740
+      }, 
+      "pspot_string": "2|1.4|1.4|1.0|13|16|17|20:21(compat7,qc=6.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/F", 
+      "RINNER_AUGCH": 1.0025039, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "F", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -663.37304, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -29.899553, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -11.111599, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 7.0, 
+      "PARTIAL_COREC": 1.0025039, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -29.899553, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3992158
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.3992158
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -11.111599, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3992158
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.3992158
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.3992158
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Sr": {
@@ -19914,6 +22938,123 @@
         38.2, 
         5.846
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 218, 
+        "FINE": 245, 
+        "COARSE": 163, 
+        "EXTREME": 392
+      }, 
+      "pspot_string": "3|2.0|2.0|1.2|6|8|9|40U:50U:41:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Sr", 
+      "RINNER_AUGCH": 1.1960518, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Sr", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -15937.39, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2158.025, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -333.77912, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -40.900361, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -3.5262296, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1917.4915, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -256.15357, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -22.822154, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -128.01525, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 10.0, 
+      "PARTIAL_COREC": 1.1960518, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -40.900361, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.5262296, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -22.822154, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0051415
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "N": {
@@ -20125,6 +23266,79 @@
         8.4, 
         1.273
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "2|1.4|1.6|0.8|7|9|10|20:21(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/N", 
+      "RINNER_AUGCH": 0.80143461, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "N", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -384.72026, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -18.582821, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -7.0898713, 
+          "OCCUPATION": 3.0
+        }
+      ], 
+      "IONIC_CHARGE": 5.0, 
+      "PARTIAL_COREC": 0.80143461, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -18.582821, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.600851
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.600851
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -7.0898713, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.600851
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.600851
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.4009779
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Kr": {
@@ -20418,6 +23632,104 @@
         15.8, 
         2.445
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 190, 
+        "COARSE": 109, 
+        "EXTREME": 305
+      }, 
+      "pspot_string": "2|1.9|1.9|1.3|4|6|7|40:41(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Kr", 
+      "RINNER_AUGCH": 1.305294, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Kr", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -14158.614, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1864.4698, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -263.96899, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -23.049026, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1648.4655, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -195.19041, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -9.2474498, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -81.401465, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 8.0, 
+      "PARTIAL_COREC": 1.305294, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -23.049026, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.8992229
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.8992229
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -9.2474498, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8992229
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8992229
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.8992229
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Si": {
@@ -20694,6 +24006,89 @@
         2.6, 
         0.392
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 82, 
+        "FINE": 109, 
+        "COARSE": 54, 
+        "EXTREME": 174
+      }, 
+      "pspot_string": "2|1.8|1.8|1.3|2|3|4|30:31:32LGG(compat7,qc=4)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Si", 
+      "RINNER_AUGCH": 1.2979762, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Si", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -1785.9357, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -139.50034, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -10.812833, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -95.559217, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -4.081206, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 4.0, 
+      "PARTIAL_COREC": 1.2979762, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -10.812833, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7965068
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7965068
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -4.081206, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7965068
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7965068
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.7965068
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Sn": {
@@ -23059,6 +26454,104 @@
         8.2, 
         1.25
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 136, 
+        "FINE": 163, 
+        "COARSE": 82, 
+        "EXTREME": 261
+      }, 
+      "pspot_string": "2|1.6|1.6|1.3|3|5|6|40:41(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Se", 
+      "RINNER_AUGCH": 1.3037572, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Se", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -12505.121, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1607.1968, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -213.51278, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -17.287378, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1413.6134, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -152.98002, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -6.5114702, 
+          "OCCUPATION": 4.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -53.124915, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 1.3037572, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -17.287378, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.605755
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.605755
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -6.5114702, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.605755
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.605755
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.605755
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Co": {
@@ -23386,6 +26879,118 @@
         2.6, 
         0.391
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 136, 
+        "FINE": 163, 
+        "COARSE": 109, 
+        "EXTREME": 261
+      }, 
+      "pspot_string": "3|2.5|2.5|1.5|4|5|6|40:32:41(compat7,qc=4){4s1.95,4p0.05}", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Co", 
+      "RINNER_AUGCH": 1.4979565, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Co", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -7593.1932, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -899.09999, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -102.50669, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -5.5360322, 
+          "OCCUPATION": 1.95
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -770.0392, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -65.739099, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -1.3303501, 
+          "OCCUPATION": 0.05
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -8.3040022, 
+          "OCCUPATION": 7.0
+        }
+      ], 
+      "IONIC_CHARGE": 9.0, 
+      "PARTIAL_COREC": 1.4979565, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -5.5360322, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -1.3303501, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -8.3040022, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.4904405
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Cm": {
@@ -24002,6 +27607,89 @@
         19.5, 
         2.98
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 190, 
+        "FINE": 218, 
+        "COARSE": 163, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "2|1.7|1.7|1.2|6|7|8|30:31:32LGG(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Cl", 
+      "RINNER_AUGCH": 1.2012131, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Cl", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -2751.3045, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -252.69683, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -20.691985, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -191.62946, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -8.5951785, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 7.0, 
+      "PARTIAL_COREC": 1.2012131, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -20.691985, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7046636
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7046636
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -8.5951785, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7046636
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7046636
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.7046636
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ca": {
@@ -24321,6 +28009,108 @@
         1.9, 
         0.283
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|1.6|2.0|1.4|7|9|10|30U:40U:31:32U=0U=1.0(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ca", 
+      "RINNER_AUGCH": 1.4014573, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ca", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -3949.4049, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -414.3704, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -47.091728, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -3.7663898, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -334.73851, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -28.008095, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 10.0, 
+      "PARTIAL_COREC": 1.4014573, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -47.091728, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.7663898, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -28.008095, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 27.211385, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0054583
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.601366
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Cf": {
@@ -25289,6 +29079,119 @@
         44.2, 
         6.889
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 190, 
+        "COARSE": 109, 
+        "EXTREME": 305
+      }, 
+      "pspot_string": "2|2.0|2.0|1.6|4|6|7|50:51(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Xe", 
+      "RINNER_AUGCH": 1.5989075, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Xe", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -34373.329, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -5349.5173, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1094.193, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -197.45711, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -19.742031, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -4799.9121, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -916.7118, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -141.26783, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -8.2345152, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -653.60352, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -59.383525, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 8.0, 
+      "PARTIAL_COREC": 1.5989075, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -19.742031, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0023598
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0023598
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -8.2345152, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0023598
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0023598
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0023598
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Tm": {
@@ -26294,6 +30197,113 @@
         10.9, 
         1.674
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 327, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "3|1.8|1.8|1.8|12|14|15|30U:40U:31:32(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Cr", 
+      "RINNER_AUGCH": 1.8013844, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Cr", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -5880.9587, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -667.14575, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -73.99151, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -4.0073872, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -560.69889, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -45.443338, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -2.9133287, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 14.0, 
+      "PARTIAL_COREC": 1.8013844, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -73.99151, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.0073872, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -45.443338, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.9133287, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.8013844
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Cu": {
@@ -26607,6 +30617,118 @@
         5.2, 
         0.794
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 218, 
+        "FINE": 272, 
+        "COARSE": 163, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.2|2.15|1.5|6|8|10|40:41:32(compat7){4s0.5,4p0.001}", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Cu", 
+      "RINNER_AUGCH": 1.5032769, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Cu", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -8855.2367, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1066.4356, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -118.77829, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -8.0919968, 
+          "OCCUPATION": 0.5
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -920.9491, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -76.234254, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -3.4146094, 
+          "OCCUPATION": 0.001
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -9.1243565, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 11.0, 
+      "PARTIAL_COREC": 1.5032769, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -8.0919968, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -3.4146094, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -9.1243565, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1511396
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.2055982
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "La": {
@@ -26897,6 +31019,143 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 136, 
+        "FINE": 163, 
+        "COARSE": 109, 
+        "EXTREME": 261
+      }, 
+      "pspot_string": "2|2.3|2.3|1.4|4|5|6|50U:60U:51:52(compat7,qc=4.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/La", 
+      "RINNER_AUGCH": 1.4053004, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "La", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -38752.451, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -6168.9885, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1319.4762, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -266.45767, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -38.924096, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.6796251, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -5528.8097, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1115.0791, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -199.99791, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -22.400443, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -821.50721, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -103.8483, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -3.0903994, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 11.0, 
+      "PARTIAL_COREC": 1.4053004, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -38.924096, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.6796251, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -22.400443, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.0903994, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2977487
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Li": {
@@ -27081,6 +31340,59 @@
           "L": 1, 
           "NORM": 0, 
           "RC": 1.0005624
+        }
+      }
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 190, 
+        "FINE": 218, 
+        "COARSE": 136, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "1|1.9|2.6|1.3|5|7|8|10U:20U(compat7,qc=4.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Li", 
+      "RINNER_AUGCH": 1.2957421, 
+      "NUM_BETA": 2, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Li", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -51.854637, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2.8741873, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 3.0, 
+      "delta_info": [], 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -51.854637, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.6101418
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -2.8741873, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.6101418
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9014561
         }
       }
     }
@@ -29064,6 +33376,113 @@
         0.5, 
         0.077
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 354, 
+        "FINE": 381, 
+        "COARSE": 327, 
+        "EXTREME": 610
+      }, 
+      "pspot_string": "3|1.8|1.8|1.5|12|13|14|30U:40U:31:32(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ti", 
+      "RINNER_AUGCH": 1.5051351, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ti", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -4868.8772, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -536.93625, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -62.633476, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -4.4669786, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -444.25918, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -38.860851, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -4.2588869, 
+          "OCCUPATION": 2.0
+        }
+      ], 
+      "IONIC_CHARGE": 12.0, 
+      "PARTIAL_COREC": 1.5051351, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -62.633476, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.4669786, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -38.860851, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -4.2588869, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.7930081
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Te": {
@@ -29402,6 +33821,119 @@
         0.9, 
         0.144
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 136, 
+        "FINE": 190, 
+        "COARSE": 109, 
+        "EXTREME": 305
+      }, 
+      "pspot_string": "2|2.2|2.2|1.6|4|5|7|50:51(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Te", 
+      "RINNER_AUGCH": 1.6059679, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Te", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -31629.215, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -4850.3293, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -965.23511, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -164.3874, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -15.108562, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -4353.9904, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -803.91104, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -114.40913, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -5.9533081, 
+          "OCCUPATION": 4.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -560.05191, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -41.652983, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 6.0, 
+      "PARTIAL_COREC": 1.6059679, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -15.108562, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.2042809
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.2042809
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -5.9533081, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.2042809
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.2042809
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.2042809
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Tb": {
@@ -29682,6 +34214,143 @@
           "L": 3, 
           "NORM": 0, 
           "RC": 2.1006803
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1006803
+        }
+      }, 
+      "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 354, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "2|2.1|2.0|1.1|13|14|15|50U:60U:51:43(compat7,qc=6.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Tb", 
+      "RINNER_AUGCH": 1.0966331, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Tb", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -51861.997, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -8597.0076, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1906.7673, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -377.63617, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -47.485464, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -3.7053422, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -7638.6259, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -1611.2605, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -280.36869, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -24.831271, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1226.4781, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -146.92121, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -3.0314523, 
+          "OCCUPATION": 9.0
+        }
+      ], 
+      "IONIC_CHARGE": 19.0, 
+      "PARTIAL_COREC": 1.0966331, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -47.485464, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9982271
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.7053422, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9982271
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -24.831271, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9982271
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9982271
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.0314523, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9982271
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9982271
         }, 
         "LOC": {
           "SCHEME": "pn", 
@@ -30064,6 +34733,128 @@
         2.6, 
         0.39
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 245, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "3|2.0|2.0|1.5|9|10|11|40U:50U:41:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Tc", 
+      "RINNER_AUGCH": 1.4999445, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Tc", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -20865.574, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2974.0394, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -515.34956, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -70.329179, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -4.1699954, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -2661.3487, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -412.69481, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -42.442929, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -246.57968, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -4.4734178, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 15.0, 
+      "PARTIAL_COREC": 1.4999445, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -70.329179, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.1699954, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -42.442929, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -4.4734178, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0079303
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ta": {
@@ -30531,6 +35322,148 @@
         4.7, 
         0.713
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 218, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.1|2.1|2.1|8|9|10|50U:60U:51:52(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ta", 
+      "RINNER_AUGCH": 2.1019337, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ta", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -67371.582, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -11575.034, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -2651.6504, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -540.63134, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -73.002066, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -5.4424959, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -10142.728, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2225.7063, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -400.93356, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -39.399181, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -1729.0236, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -222.19379, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -3.5909127, 
+          "OCCUPATION": 3.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -24.704443, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 13.0, 
+      "PARTIAL_COREC": 2.1019337, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -73.002066, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -5.4424959, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -39.399181, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.5909127, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.1019337
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Yb": {
@@ -31775,6 +36708,119 @@
         16.0, 
         2.453
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 163, 
+        "FINE": 218, 
+        "COARSE": 136, 
+        "EXTREME": 348
+      }, 
+      "pspot_string": "2|2.0|2.0|1.6|5|6|8|50:51(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/I", 
+      "RINNER_AUGCH": 1.6021485, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "I", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -32984.98, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -5096.2626, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -1028.5852, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -180.59433, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -17.407423, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -4573.9575, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -859.34954, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -127.56933, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -7.0859582, 
+          "OCCUPATION": 5.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -605.96661, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -50.278771, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 7.0, 
+      "PARTIAL_COREC": 1.6021485, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -17.407423, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0064188
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0064188
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -7.0859582, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0064188
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0064188
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0064188
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "U": {
@@ -32105,6 +37151,168 @@
           "L": 3, 
           "NORM": 0, 
           "RC": 2.1061577
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.1061577
+        }
+      }, 
+      "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 327, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "2|2.1|2.0|1.4|12|14|15|60U:70U:61:53:62P(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/U", 
+      "RINNER_AUGCH": 1.4000746, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "U", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -116106.76, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -21708.868, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -5481.1008, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -1396.8264, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -310.27931, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -47.856699, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "7s", 
+          "ENERGY": -4.2337219, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -18022.596, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -4458.3579, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -1062.931, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -207.21801, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "6p", 
+          "ENERGY": -23.239333, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -3574.3341, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -727.89649, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -98.97922, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "6d", 
+          "ENERGY": -2.3257747, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -372.78081, 
+          "OCCUPATION": 14.0
+        }, 
+        {
+          "ORBITAL": "5f", 
+          "ENERGY": -3.342239, 
+          "OCCUPATION": 3.0
+        }
+      ], 
+      "IONIC_CHARGE": 14.0, 
+      "PARTIAL_COREC": 1.4000746, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -47.856699, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0034379
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.2337219, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0034379
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -23.239333, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0034379
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0034379
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.342239, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0034379
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0034379
         }, 
         "LOC": {
           "SCHEME": "pn", 
@@ -32494,6 +37702,128 @@
         7.7, 
         1.166
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 190, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "3|2.0|2.0|2.0|7|9|10|40U:50U:41:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Y", 
+      "RINNER_AUGCH": 2.0031881, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Y", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -16867.42, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2311.495, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -368.97538, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -47.994532, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -4.1025783, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -2057.8449, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -286.68878, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -27.916715, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -151.20269, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -2.5157915, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 11.0, 
+      "PARTIAL_COREC": 2.0031881, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -47.994532, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.1025783, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -27.916715, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.5157915, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0031881
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ac": {
@@ -33168,6 +38498,114 @@
         5.5, 
         0.847
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "1|2.2|2.3|1.6|8|10|11|50:42(compat7,qc=5,q0=3.75)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ag", 
+      "RINNER_AUGCH": 1.5943817, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ag", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -25330.39, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -3729.5222, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -683.71617, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -95.051564, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -4.4049688, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -3345.2147, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -557.49318, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -58.567294, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -358.47742, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -7.4435453, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 11.0, 
+      "PARTIAL_COREC": 1.5943817, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -4.4049688, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.3005835
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.3005835
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -7.4435453, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.3005835
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.3005835
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.2066933
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ir": {
@@ -33628,6 +39066,148 @@
         0.9, 
         0.135
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 299, 
+        "FINE": 354, 
+        "COARSE": 272, 
+        "EXTREME": 566
+      }, 
+      "pspot_string": "3|2.0|2.0|1.8|10|11|13|50U:60U:51:52(compat7,qc=5.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ir", 
+      "RINNER_AUGCH": 1.8031048, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ir", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -76137.944, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -13318.926, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -3115.2105, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -664.58603, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -97.984767, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -6.3312498, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -11569.243, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2603.6851, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -496.85612, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -54.698899, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -2041.1362, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -290.98744, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -7.1476437, 
+          "OCCUPATION": 7.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -62.191852, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 17.0, 
+      "PARTIAL_COREC": 1.8031048, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -97.984767, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -6.3312498, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -54.698899, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -7.1476437, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 1.9927424
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Am": {
@@ -33958,6 +39538,163 @@
         }
       }, 
       "delta_info": []
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 381, 
+        "FINE": 408, 
+        "COARSE": 354, 
+        "EXTREME": 653
+      }, 
+      "pspot_string": "2|2.1|2.1|1.5|13|14|15|60U:70U:61:53(compat7,qc=6)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Am", 
+      "RINNER_AUGCH": 1.4984617, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Am", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -125655.44, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -23785.02, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -6066.3072, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -1573.8922, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -353.15689, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -50.82129, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "7s", 
+          "ENERGY": -3.8769567, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -19508.111, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -4889.2368, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -1190.2366, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -232.76577, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "6p", 
+          "ENERGY": -22.859887, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -3923.7549, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -823.28651, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -111.16264, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -440.68584, 
+          "OCCUPATION": 14.0
+        }, 
+        {
+          "ORBITAL": "5f", 
+          "ENERGY": -2.5300162, 
+          "OCCUPATION": 7.0
+        }
+      ], 
+      "IONIC_CHARGE": 17.0, 
+      "PARTIAL_COREC": 1.4984617, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -50.82129, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -3.8769567, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -22.859887, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -2.5300162, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.091282
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Al": {
@@ -34234,6 +39971,89 @@
         1.7, 
         0.258
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 54, 
+        "FINE": 82, 
+        "COARSE": 27, 
+        "EXTREME": 131
+      }, 
+      "pspot_string": "2|2.0|2.0|1.7|1|2|3|30:31:32LGG(compat7,qc=3)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Al", 
+      "RINNER_AUGCH": 1.6931737, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Al", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -1511.1429, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -108.16505, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -7.7529053, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -69.643079, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2.7121013, 
+          "OCCUPATION": 1.0
+        }
+      ], 
+      "IONIC_CHARGE": 3.0, 
+      "PARTIAL_COREC": 1.6931737, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -7.7529053, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.000283
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.000283
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -2.7121013, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.000283
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.000283
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.000283
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "As": {
@@ -34562,6 +40382,104 @@
         4.4, 
         0.676
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 218, 
+        "FINE": 299, 
+        "COARSE": 190, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "2|1.6|1.6|1.3|7|8|11|40:41(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/As", 
+      "RINNER_AUGCH": 1.299225, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "As", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -11719.512, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -1486.7581, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -190.30537, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -14.494212, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -1303.6526, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -133.67752, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -5.1950189, 
+          "OCCUPATION": 3.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -40.645571, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 5.0, 
+      "PARTIAL_COREC": 1.299225, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -14.494212, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6001737
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.6001737
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -5.1950189, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.6001737
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.6001737
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.6001737
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Ar": {
@@ -34810,6 +40728,89 @@
         55.4, 
         8.703
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 245, 
+        "FINE": 272, 
+        "COARSE": 163, 
+        "EXTREME": 435
+      }, 
+      "pspot_string": "2|1.7|1.7|1.0|6|9|10|30:31(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Ar", 
+      "RINNER_AUGCH": 1.001158, 
+      "NUM_BETA": 4, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Ar", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -3120.3533, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -296.99024, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -24.286907, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -229.88598, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -10.269952, 
+          "OCCUPATION": 6.0
+        }
+      ], 
+      "IONIC_CHARGE": 8.0, 
+      "PARTIAL_COREC": 1.001158, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -24.286907, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7066759
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 1.7066759
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -10.269952, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7066759
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 1.7066759
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 1.7066759
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Au": {
@@ -35270,6 +41271,148 @@
         8.9, 
         1.365
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 299, 
+        "FINE": 354, 
+        "COARSE": 272, 
+        "EXTREME": 566
+      }, 
+      "pspot_string": "3|2.0|2.0|1.8|10|11|13|50U:60U:51:52(compat7,qc=5.5)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Au", 
+      "RINNER_AUGCH": 1.8019476, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Au", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -80787.584, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -14253.784, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -3364.2446, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -730.20929, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -108.3674, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "6s", 
+          "ENERGY": -5.7621647, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -12320.444, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -2803.5857, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -546.40803, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -59.782469, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -2205.3029, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -325.89814, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "5d", 
+          "ENERGY": -6.8772954, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4f", 
+          "ENERGY": -81.122067, 
+          "OCCUPATION": 14.0
+        }
+      ], 
+      "IONIC_CHARGE": 19.0, 
+      "PARTIAL_COREC": 1.8019476, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -108.3674, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -5.7621647, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -59.782469, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -6.8772954, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0081285
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "At": {
@@ -36057,6 +42200,133 @@
         6.5, 
         0.99
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "3|2.3|2.3|1.6|8|10|11|50:51:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/In", 
+      "RINNER_AUGCH": 1.5943742, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "In", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -27754.321, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -4155.6283, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -788.56629, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -119.65936, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -8.2114235, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -3729.8291, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -649.13484, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -78.130218, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "5p", 
+          "ENERGY": -2.5187166, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -432.71155, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -18.62328, 
+          "OCCUPATION": 10.0
+        }
+      ], 
+      "IONIC_CHARGE": 13.0, 
+      "PARTIAL_COREC": 1.5943742, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -8.2114235, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -2.5187166, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -18.62328, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.3005718
+        }
+      }, 
+      "delta_info": []
     }
   }, 
   "Mo": {
@@ -36429,6 +42699,128 @@
         2.2, 
         0.338
       ]
+    }, 
+    "castep_7_ultrasoft": {
+      "CUTOFFS": {
+        "MEDIUM": 272, 
+        "FINE": 299, 
+        "COARSE": 218, 
+        "EXTREME": 479
+      }, 
+      "pspot_string": "3|2.0|2.0|2.0|8|10|11|40U:50U:41:42(compat7)", 
+      "LEVEL_THEORY": "PBE", 
+      "SOLVER": "Koelling-Harmon", 
+      "basepath": "graphs/castep_7_ultrasoft/Mo", 
+      "RINNER_AUGCH": 2.0049804, 
+      "NUM_BETA": 6, 
+      "library": "castep_7_ultrasoft", 
+      "ELEMENT": "Mo", 
+      "ELECTRONIC_STRUCTURE": [
+        {
+          "ORBITAL": "1s", 
+          "ENERGY": -19822.652, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "2s", 
+          "ENERGY": -2799.6274, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "3s", 
+          "ENERGY": -476.53247, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "4s", 
+          "ENERGY": -64.347031, 
+          "OCCUPATION": 2.0
+        }, 
+        {
+          "ORBITAL": "5s", 
+          "ENERGY": -4.086648, 
+          "OCCUPATION": 1.0
+        }, 
+        {
+          "ORBITAL": "2p", 
+          "ENERGY": -2502.769, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3p", 
+          "ENERGY": -379.24445, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "4p", 
+          "ENERGY": -38.485619, 
+          "OCCUPATION": 6.0
+        }, 
+        {
+          "ORBITAL": "3d", 
+          "ENERGY": -220.97907, 
+          "OCCUPATION": 10.0
+        }, 
+        {
+          "ORBITAL": "4d", 
+          "ENERGY": -3.7530178, 
+          "OCCUPATION": 5.0
+        }
+      ], 
+      "IONIC_CHARGE": 14.0, 
+      "PARTIAL_COREC": 2.0049804, 
+      "PROJECTORS": {
+        "1": {
+          "SCHEME": "qc", 
+          "E": -64.347031, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "2": {
+          "SCHEME": "qc", 
+          "E": -4.086648, 
+          "L": 0, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "3": {
+          "SCHEME": "qc", 
+          "E": -38.485619, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "4": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 1, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "5": {
+          "SCHEME": "qc", 
+          "E": -3.7530178, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "6": {
+          "SCHEME": "qc", 
+          "E": 6.8028463, 
+          "L": 2, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }, 
+        "LOC": {
+          "SCHEME": "pn", 
+          "E": 0.0, 
+          "L": 3, 
+          "NORM": 0, 
+          "RC": 2.0049804
+        }
+      }, 
+      "delta_info": []
     }
   }
 }

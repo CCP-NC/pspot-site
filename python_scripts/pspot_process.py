@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # A script postprocessing the PseudoPotential files to keep updated tables of their content
 
 import re
@@ -10,6 +11,9 @@ import shutil
 import argparse as ap
 
 from pspot_usp import USPpspot
+
+# A block process in order to be lighter on memory use when running CASTEP
+_libblock_maxsize = 20
 
 def clear_folder(fold):
 
@@ -43,41 +47,49 @@ def run_castep_calc(lib, lib_name):
 
     global config, main_abspath, cell_template, param_template
 
-    # Build the positions and pseudopotential blocks
-    positions_block = ''
-    potentials_block = ''
-    for el in lib:
-        if lib[el].endswith('[]'):
-            lib[el] = lib[el][:-2]
-        positions_block += "{0} 0 0 0\n".format(el)
-        potentials_block += "{0} {1}[]\n".format(el, lib[el])
-
-    cell_file = cell_template.replace('<positions_block>', positions_block)
-    cell_file = cell_file.replace('<potentials_block>', potentials_block)
-
-    param_file = param_template # For now no replacement is needed
-
-    # At this point generate the directory structure
+    # Generate the directory structure
     dirname = lib_dirname(lib_name)
     if not os.path.exists(dirname):
         os.mkdir(dirname)
     else:
         clear_folder(dirname)
+        
+    # Build the positions and pseudopotential blocks
 
-    cell_fname = os.path.join(dirname, lib_name+'.cell')
-    open(cell_fname, 'w').write(cell_file)
-    param_fname = os.path.join(dirname, lib_name+'.param')
-    open(param_fname, 'w').write(param_file)
+    lib_blocks = [lib.items()[b_i:b_i+_libblock_maxsize]
+                  for b_i in range(0, len(lib), _libblock_maxsize)]
 
-    # Now run a CASTEP dryrun
-    try:
-        castep_run = subprocess.Popen([config['castep_command'],
-                                       '-dryrun',
-                                       lib_name], cwd=dirname)
-        castep_run.wait()
-    except OSError:
-        sys.stderr.write("CASTEP run failed, skipping\n")
-        return
+    for bl in lib_blocks:
+
+        positions_block = ''
+        potentials_block = ''
+
+        for el, pp in bl:
+            if pp.endswith('[]'):
+                pp = pp[:-2]
+            positions_block += "{0} 0 0 0\n".format(el)
+            potentials_block += "{0} {1}[]\n".format(el, pp)
+
+        cell_file = cell_template.replace('<positions_block>', positions_block)
+        cell_file = cell_file.replace('<potentials_block>', potentials_block)
+
+        param_file = param_template # For now no replacement is needed
+
+
+        cell_fname = os.path.join(dirname, lib_name+'.cell')
+        open(cell_fname, 'w').write(cell_file)
+        param_fname = os.path.join(dirname, lib_name+'.param')
+        open(param_fname, 'w').write(param_file)
+
+        # Now run a CASTEP dryrun
+        try:
+            castep_run = subprocess.Popen([config['castep_command'],
+                                           '-dryrun',
+                                           lib_name], cwd=dirname)
+            castep_run.wait()
+        except OSError:
+            sys.stderr.write("CASTEP run failed, skipping\n")
+            return
 
 def run_gnuplot(pspot):
 

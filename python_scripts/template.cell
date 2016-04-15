@@ -10,3 +10,5 @@
 %BLOCK SPECIES_POT
 <potentials_block>
 %ENDBLOCK SPECIES_POT
+
+kpoints_mp_grid 1   1   1
