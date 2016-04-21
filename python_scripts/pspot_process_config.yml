@@ -1,3 +1,4 @@
 {castep_command: castep.serial, cell_template: template.cell, default_library: castep_9_ultrasoft,
   gnuplot_command: gnuplot, gp_template: template.gp, graph_path: graphs, main_relpath: ..,
-  param_template: template.param, pspot_path: data/libraries, delta_path: data/delta_test}
+  param_template: template.param, pspot_path: data/libraries, delta_path: data/delta_test,
+  libblock_size: 1}
