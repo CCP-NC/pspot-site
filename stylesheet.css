@@ -18,7 +18,7 @@ body.light {
 
 a {
     font-weight: bold;
-    text-decoration: none;    
+    text-decoration: none;  
 }
 
 a:link {
@@ -190,6 +190,19 @@ dl.inline dt{
     color: #bb0000;
 }
 
+.help_link {
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 5pt;
+
+    font-weight: bold;
+    font-size: 25pt;
+    text-align: right;
+
+}
+
 .divbutton {
     position: relative;
 
@@ -314,6 +327,10 @@ dl.inline dt{
 
     font-weight: bold;
     font-size: 30pt;
+}
+
+.pspot_infobox .help_link {
+    top: 0;
 }
 
 .pspot_infobox .info_element {

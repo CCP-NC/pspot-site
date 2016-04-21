@@ -1,13 +1,16 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # A script to push the website and its content up to a given URL
 FILE_LIST="graphs data pspot_data.json"
+HELP_LAYOUT="github"
 
 echo "What to push?"
 select pmode in "All" "Just library data"; do
 	case $pmode in
 		"All" ) # Add all the other files
-			FILE_LIST=$FILE_LIST" index.html pspot.html stylesheet.css favicon.ico js lib"
+			# First, compile help
+			generate-md --layout $HELP_LAYOUT --input help.md --output help
+			FILE_LIST=$FILE_LIST" index.html pspot.html help stylesheet.css favicon.ico js lib"
 			break;;	
 		"Just library data" ) break;;
 	esac

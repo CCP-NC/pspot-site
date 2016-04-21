@@ -12,8 +12,6 @@ import argparse as ap
 
 from pspot_usp import USPpspot
 
-# A block process in order to be lighter on memory use when running CASTEP
-_libblock_maxsize = 20
 
 def clear_folder(fold):
 
@@ -54,10 +52,11 @@ def run_castep_calc(lib, lib_name):
     else:
         clear_folder(dirname)
         
+    # A block process in order to be lighter on memory use when running CASTEP
     # Build the positions and pseudopotential blocks
 
-    lib_blocks = [lib.items()[b_i:b_i+_libblock_maxsize]
-                  for b_i in range(0, len(lib), _libblock_maxsize)]
+    lib_blocks = [lib.items()[b_i:b_i+config['libblock_size']]
+                  for b_i in range(0, len(lib), config['libblock_size'])]
 
     for bl in lib_blocks:
 
@@ -252,6 +251,7 @@ def parse_betaproj(pspot):
 parser = ap.ArgumentParser()
 parser.add_argument('-noplot', action='store_true', default=False, help="Do not generate PSPOT plots")
 parser.add_argument('-nocastep', action='store_true', default=False, help="Do not run CASTEP, use existing files if present")
+parser.add_argument('-only', type=str, nargs='+', default=None, help="Use only these libraries")
 
 args = parser.parse_args()
 
@@ -266,7 +266,8 @@ config = {
     "gnuplot_command": "gnuplot",
     "cell_template": "template.cell",
     "param_template": "template.param",
-    "gp_template": "template.gp"
+    "gp_template": "template.gp",
+    "libblock_size": 20
 } # Default settings
 
 # The directory of the project, calculated relative to the physical location of the script
@@ -299,7 +300,10 @@ except IOError:
 
 # Now load all the various libraries
 
-pspot_library_list = glob.glob(os.path.join(main_abspath, config['pspot_path'], '*'))
+if args.only is None:
+    pspot_library_list = glob.glob(os.path.join(main_abspath, config['pspot_path'], '*'))
+else:
+    pspot_library_list = args.only
 pspot_library_dict = {}
 pspot_list = []
 
