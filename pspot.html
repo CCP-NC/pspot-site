@@ -71,6 +71,30 @@ Please refer to the file COPYING for the text of the license
                         <dd id="info_solver"></dd>
                     </dl>
                     </li>
+                    <li>
+                        <span class="li_header">Lattice parameters:</span>
+                        <table id="latt_table" style="display: none">
+                            <tr>
+                                <td class="tr_header">a</td>
+                                <td id="latt_a_x">N/A</td>
+                                <td id="latt_a_y">N/A</td>
+                                <td id="latt_a_z">N/A</td>
+                            </tr>
+                            <tr>
+                                <td class="tr_header">b</td>
+                                <td id="latt_b_x">N/A</td>
+                                <td id="latt_b_y">N/A</td>
+                                <td id="latt_b_z">N/A</td>
+                            </tr>
+                            <tr>
+                                <td class="tr_header">c</td>
+                                <td id="latt_c_x">N/A</td>
+                                <td id="latt_c_y">N/A</td>
+                                <td id="latt_c_z">N/A</td>
+                            </tr>
+                        </table>
+                        <span id="nolatt_msg">N/A</span>
+                    </li>
                     <li title="This table contains the suggested energy cutoffs for calculations using the given pseudopotential for different levels of precision, with descriptive names ranging from _COARSE_ to _EXTREME_.
                         When planning for a new calculation, a good estimate for the cutoff to use is, once you've decided on one of these levels, to pick the highest value from all the pseudopotentials that you're going to use."><span class="li_header">Cutoffs (eV):</span>
                         <table>
@@ -127,6 +151,8 @@ Please refer to the file COPYING for the text of the license
                                * Partial waves: full (dashed lines) and pseudised (continuous) versions of the electronic wavefunctions corresponding to the beta projectors'>
                         <span class="li_header">Plotted data:</span>
                         <select id="plot_data_select">
+                            <option value="bands">Band structure</option>
+                            <option value="dos">Density of states</option>
                             <option value="econv">Energy convergence</option>
                             <option value="beta">Beta projectors</option>
                             <option value="pwave">Partial waves</option>

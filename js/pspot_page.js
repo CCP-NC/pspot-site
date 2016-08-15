@@ -66,6 +66,31 @@ var PspotPage = function(pspot_files) {
 			$('#cut_val_' + cut.toLowerCase()).html(this.pspot.CUTOFFS[cut]);
 		}
 
+		// Now getting the lattice parameters, if present
+		function parse_cell(csv) {
+			lines = csv.split('\n');
+			cell = [];
+			pars = ['a', 'b', 'c'];
+			coords = ['x', 'y', 'z'];
+			for (var i = 0; i < 3; ++i) {
+				abc = lines[i].split(',');
+				for (var j = 0; j < 3; ++j) {
+					$('#latt_' + pars[i] + '_' + coords[j]).html(parseFloat(abc[j]));
+				}
+			}
+			$('#latt_table').css('display', 'table');
+			$('#nolatt_msg').css('display', 'none');
+		}
+
+		try {
+			$.get('data/lattice/' + this.pspot.library + '/' + this.pspot.ELEMENT + '.csv', parse_cell, 'text');
+		}
+		catch (err) {
+			// None found...
+			$('#latt_table').css('display', 'none');
+			$('#nolatt_msg').css('display', 'inline');
+		}
+
 		// Compile the Beta projectors table
 		var btab = $('#beta_proj_table');
 		btab.find('tr:not(.tr_header)').remove();
