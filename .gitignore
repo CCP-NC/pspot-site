@@ -1,2 +1,5 @@
 # Computed data
 graphs/*
+
+# Python stuff
+python_scripts/__pycache__/*
