@@ -55,7 +55,9 @@ def run_castep_calc(lib, lib_name):
     # A block process in order to be lighter on memory use when running CASTEP
     # Build the positions and pseudopotential blocks
 
-    lib_blocks = [lib.items()[b_i:b_i+config['libblock_size']]
+    lib_items = list(lib.items())
+
+    lib_blocks = [lib_items[b_i:b_i+config['libblock_size']]
                   for b_i in range(0, len(lib), config['libblock_size'])]
 
     for bl in lib_blocks:
@@ -310,7 +312,7 @@ pspot_list = []
 # Clear the folder containing the calculations
 if not args.nocastep and cell_template is not None:
     # Ask for confirmation, this is some serious shit
-    ans = raw_input("To run the calculations the entire content of graph_path will be deleted, continue [y/N]?")
+    ans = input("To run the calculations the entire content of graph_path will be deleted, continue [y/N]?")
     if ans.lower() != 'y':
         sys.exit("Execution interrupted")
     clear_folder(os.path.join(main_abspath, config['graph_path']))
@@ -319,7 +321,7 @@ for lib_fname in pspot_library_list:
     
     # Parse the given library
     try:
-        lib = yaml.load(open(lib_fname))
+        lib = yaml.safe_load(open(lib_fname))
     except yaml.scanner.ScannerError as e:
         sys.stderr.write("Parsing of library {0} failed.\nDetails: {1}\n" +
                          "Skipping...\n".format(lib_fname, e))
