@@ -9,13 +9,20 @@ import yaml
 infile = open(sys.argv[1]).readlines()
 
 lib = {}
+libhead_re = re.compile("ps_lib[\(\),0-9\s]+/\"([a-zA-Z0-9]+)\"")
+librow_re = re.compile("ps_def[\(\),0-9\s]+/\"([^\"]*)\"/ !\*[\s]+([A-Za-z]+)")
 
-librow_re = re.compile("\"([^\"]*)\"/ !\*[\s]+([A-Za-z]+)")
+header = None
 
 for l in infile:
-    mtch = librow_re.findall(l)
+	match_head = libhead_re.findall(l)
+	match_row = librow_re.findall(l)
 
-    if len(mtch) > 0 and mtch[0][0] != '':
-        lib[mtch[0][1]] = mtch[0][0]
+	if len(match_head) > 0:
+		header = match_head[0]
+		lib[header] = {}
 
-print yaml.safe_dump(lib, default_flow_style=False)
+	if header is not None and len(match_row) > 0:
+		lib[header][match_row[0][1]] = match_row[0][0]
+
+print(yaml.safe_dump(lib, default_flow_style=False))
