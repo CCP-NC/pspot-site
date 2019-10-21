@@ -6,7 +6,7 @@ This website provides a convenient way to access information on CASTEP's
 most used pseudopotential libraries, reporting basic information as well as
 technical details and validation metrics for each of them. All the
 pseudopotentials here reported have been calculated starting with the given
-parameters with CASTEP 16.1.1.
+parameters with CASTEP 20.1.
 
 The main page is a periodic table reporting all known elements. Clicking on
 them a box to the right will visualize some fundamental chemical information
