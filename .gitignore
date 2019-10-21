@@ -1,5 +1,6 @@
 # Computed data
 graphs/*
+generate/.*
 
 # Python stuff
 python_scripts/__pycache__/*
