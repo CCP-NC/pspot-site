@@ -1,6 +1,9 @@
 # Computed data
 graphs/*
 generate/.*
+generate/*.yml
+generate/*.yaml
 
 # Python stuff
+generate/__pycache__/*
 python_scripts/__pycache__/*
