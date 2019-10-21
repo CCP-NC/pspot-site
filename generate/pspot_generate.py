@@ -181,5 +181,5 @@ for lib, libdata in pspotcalc.items():
 
 json.dump(element_data, open(os.path.join('..', args.json), 'w'), indent=2)
 
-# if args.tclean:
-#     shutil.rmtree(os.path.join(abspath, args.tdir))
+if args.tclean:
+    shutil.rmtree(os.path.join(abspath, args.tdir))
