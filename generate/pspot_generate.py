@@ -39,7 +39,8 @@ parser.add_argument('-graphs', type=str, default='graphs',
                     help='Folder to save graphs')
 parser.add_argument('-deflib', type=str, default=None,
                     help='Default library (when present)')
-
+parser.add_argument('-json', type=str, default='pspot_data.json',
+                    help='Default JSON output file')
 
 args = parser.parse_args()
 
@@ -175,10 +176,10 @@ for lib, libdata in pspotcalc.items():
         out, err = proc.communicate()
 
         data['pwave_png'] = pwaveout
-        
+
         element_data[el][lib] = data
 
-json.dump(element_data, open('../pspot_data_new.json', 'w'), indent=2)
+json.dump(element_data, open(os.path.join('..', args.json), 'w'), indent=2)
 
 # if args.tclean:
 #     shutil.rmtree(os.path.join(abspath, args.tdir))
