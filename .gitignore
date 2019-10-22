@@ -1,5 +1,4 @@
 # Computed data
-graphs/*
 generate/.*
 generate/*.yml
 generate/*.yaml

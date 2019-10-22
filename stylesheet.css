@@ -92,7 +92,7 @@ dl.inline dt{
     position: relative;
 
     color: #000000;
-    border: 1px solid black;
+    border: 2px solid black;
     background-color: rgba(240, 240, 255, 0.6);
     font-family: sans-serif;
     cursor: pointer;    
@@ -111,7 +111,7 @@ dl.inline dt{
     width: 100%;
     height: 45%;
 
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -178,13 +178,15 @@ dl.inline dt{
 
     top: 10%;
     right: 2%;
-    width: 18%;
+    width: 16%;
     height: 80%;
 
     background-color: rgba(255, 255, 255, 0.6);
     border-style: solid;
     border-width: 5pt;
     border-color: #000000;
+
+    padding: 1%;
 }
 
 .info_box .info-name {
@@ -195,6 +197,7 @@ dl.inline dt{
     margin: 15px;
 
     font-weight: bold;
+    font-size: 1.5em;
 
 }
 
@@ -218,6 +221,7 @@ dl.inline dt{
 
     position: absolute;
     bottom: 0;
+    right: 0;
     width: 100%;
     border: 5pt;
 

@@ -50,7 +50,8 @@ Please refer to the file COPYING for the text of the license
         <div id="main-app" v-cloak>
             <div class="periodic_table">
                 <div class="elem" v-for="e in ptable" v-if="e.subTable == 'Main'"
-                v-bind:style="{'background-color': getGroupColor(e), 
+                v-bind:style="{'background-color': getGroupColor(e)[0],
+                               'border-color': getGroupColor(e)[1],
                                'grid-row': e.rowI+1, 'grid-column': e.colI+1}" 
                 v-on:click="select(e)">
                     <div class="elem-symbol">{{ e.symbol }}</div>
@@ -62,7 +63,8 @@ Please refer to the file COPYING for the text of the license
 
             <div class="lantact_table">
                 <div class="elem" v-for="e in ptable" v-if="e.subTable == 'LantAct'"
-                v-bind:style="{'background-color': getGroupColor(e), 
+                v-bind:style="{'background-color': getGroupColor(e)[0],
+                               'border-color': getGroupColor(e)[1],
                                'grid-row': e.rowI+1, 'grid-column': e.colI+1}" 
                 v-on:click="select(e)">
                     <div class="elem-symbol">{{ e.symbol }}</div>
@@ -73,7 +75,7 @@ Please refer to the file COPYING for the text of the license
             </div>
 
             <div class="info_box">
-                <span class="info_name">{{selected}}</span>
+                <span class="info-name">{{ptable[selected].name}}</span>
                 <div>
                     <div class="info_main">
                         <b>Symbol:</b> <span class="info_symbol">{{ ptable[selected].symbol }}</span><br>

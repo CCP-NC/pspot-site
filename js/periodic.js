@@ -23,16 +23,18 @@ function initPeriodicTable(el) {
             methods: {
                 getGroupColor: function(el) {
                     // Default colors
-                    var group_col = {'actinoid': '#55ee99',
-                        'alkali metal': '#774422',
-                        'alkaline earth metal': '#774400',
-                        'halogen': '#00ff44',
-                        'lanthanoid': '#33cc77',
-                        'metal': '#6666aa',
-                        'metalloid': '#cc88bb',
-                        'noble gas': '#ddddff',
-                        'nonmetal': '#bb33cc',
-                        'transition metal': '#9999dd'};
+                    var group_col = {
+                        'actinoid': ['#77ffbb', '#55ee99'],
+                        'alkali metal': ['#ddaa88', '#774422'],
+                        'alkaline earth metal':  ['#ddaa00', '#774400'],
+                        'halogen': ['#aaffcc', '#00ff44'],
+                        'lanthanoid': ['#66ffaa', '#33cc77'],
+                        'metal': ['#aaaadd', '#6666aa'],
+                        'metalloid': ['#ffaadd', '#cc88bb'],
+                        'noble gas': ['#eeeeff', '#ccccff'],
+                        'nonmetal': ['#dd88ff', '#bb33cc'],
+                        'transition metal': ['#ddddff', '#9999dd']};
+
                     return group_col[el.groupBlock];
                 },
                 getMass: function(el) {
