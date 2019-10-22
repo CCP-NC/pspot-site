@@ -24,147 +24,147 @@ Please refer to the file COPYING for the text of the license
 
         <!-- JS Libraries -->
         <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-        <script src="lib/d3/d3.min.js"></script>
+        <script src="lib/vue.min.js"></script>
 
         <!-- Source code files -->
-        <script src="js/svgt.js"></script>
         <script src="js/url_params.js"></script>
-        <script src="js/pspot_page.js"></script>
-        <script src="js/svgd3plot.js"></script>
+        <script src="js/pspot.js"></script>
     </head>
     <body class="light">
 
-        <div class="pspot_plotbox">
+        <div id="main-app">
 
-            <img class="pspot_main_plot" id="pspot_plot_png">
-            </img>
+            <div class="pspot_plotbox">
 
-            <svg class="pspot_main_plot" id="pspot_plot_svg">
-            </svg>
+                <img class="pspot_main_plot" id="pspot_plot_png"
+                v-bind:src="pspot[library][active_plot + '_png']">
+                </img>
 
-        </div>
-
-        <div class="pspot_infobox">
-            <a class="help_link" href="help/help.html">[?]</a>
-            <div class="info_header">
-                <span class="info_element">Element</span>&nbsp;-&nbsp;
-                <span class="info_name">PSPOT.usp</span>
             </div>
-            <div class="info_libchoose">
-            Choose library:&nbsp;
-            <select id="lib_choose_select">
-                <option value="this_library">this_library</option>
-            </select>
-            </div>
-            <div class="info_main">
-                <ul>
-                    <li><span class="li_header">Basic info:</span>
-                    <dl class="inline">
-                        <dt title='number of electrons left free to act as "valence" for the pseudopotential'>
-                        Ionic charge:</dt>
-                        <dd id="info_ion_charge"></dd>
-                        <dt title='exchange-correlation functional used for the calculation of the pseudopotential'>
-                        XC functional:</dt>
-                        <dd id="info_xc"></dd>
-                        <dt title='solver method employed to calculate the potential in the free atom.
-                                   CASTEP’s default is the scalar-relativistic method of Koelling and Harmon.'>Solver:</dt>
-                        <dd id="info_solver"></dd>
-                    </dl>
-                    </li>
-                    <li title="This table contains the suggested energy cutoffs for calculations using the given pseudopotential for different levels of precision, with descriptive names ranging from _COARSE_ to _EXTREME_.
-                        When planning for a new calculation, a good estimate for the cutoff to use is, once you've decided on one of these levels, to pick the highest value from all the pseudopotentials that you're going to use."><span class="li_header">Cutoffs (eV):</span>
-                        <table>
-                            <tr class="tr_header">
-                                <td>COARSE</td>
-                                <td>MEDIUM</td>
-                                <td>FINE</td>
-                                <td>EXTREME</td>
-                            </tr>
-                            <tr>
-                                <td id="cut_val_coarse">0</td>
-                                <td id="cut_val_medium">0</td>
-                                <td id="cut_val_fine">0</td>
-                                <td id="cut_val_extreme">0</td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li title='This string is the descriptor that contains all the parameters CASTEP needs to rebuild the potential, and it can be inserted in the SPECIES_POT block of a .cell file.'>
-                        <span class="li_header">Pseudopotential string:</span><br>
-                        <span id="pspot_line">Test</span>
-                    </li>
-                    <li title='States occupied by the valence electrons in the all electron solution of the atom expressed as hydrogenlike orbitals'>
-                        <span class="li_header">Valence electronic structure:</span>
-                        <span id="info_elstruct"></span>
-                    </li>
-                    <li id="delta_test" title='Results of the Delta test, assessing the accuracy of pseudopotentials used in ab initio codes against an established standard'>
-                        <span class="li_header">Delta test results</span><br>
-                        <span class="note">(for more info about the Delta test check the website of the <a target="_blank" href="https://molmod.ugent.be/deltacodesdft">Center of Molecular Modeling</a>)</span>
-                        <table id="delta_test_table">
-                            <tr class="tr_header">
-                                <td>&Delta;-value (mEV/atom)</td>
-                                <td>&Delta;-value (%)</td>
-                                <td>&Delta;<sub>1</sub></td>
-                            </tr>
-                            <tr>
-                                <td id="delta_d"></td>
-                                <td id="delta_dr"></td>
-                                <td id="delta_d1"></td>
-                            </tr>
-                        </table>
-                    </li>
-                    <!--
-                    <li>
-                        <span class="li_header">Plot type:</span>
-                        <select id="plot_type_select">
-                            <option value="static">Static plots</option>
-                            <option value="interactive">Interactive plots</option>
-                        </select>
-                    </li>
-                    -->
-                    <li title='Select which plot to visualize here.
-                               * Energy convergence: calculated energy of the isolated, spherical atom vs. the cutoff used
-                               * Beta projectors: projector functions of the non-local pseudopotential classified by momentum channel
-                               * Partial waves: full (dashed lines) and pseudised (continuous) versions of the electronic wavefunctions corresponding to the beta projectors'>
-                        <span class="li_header">Plotted data:</span>
-                        <select id="plot_data_select">
-                            <option value="econv">Energy convergence</option>
-                            <option value="beta">Beta projectors</option>
-                            <option value="pwave">Partial waves</option>
-                        </select>
-                    </li>
-                    <li title='Details of the projectors'>
-                        <span class="li_header">Projector details</span>
-                        <table id="beta_proj_table">
-                            <tr class="tr_header">
-                                <td title="Projector index">Beta</td>
-                                <td title="Angular momentum">l</td>
-                                <td title="Energy">E (eV)</td>
-                                <td title="Cutoff radius">Rc (a.u.)</td>
-                                <td title="Pseudisation scheme">Scheme</td>
-                                <td title="Type of the given projector. N = Norm-Conserving, U = Ultrasoft">Type</td>
-                                <td title="Color used in plots">Legend</td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li title='Downloadable ASCII data files used to build plots'>
-                        <span class="li_header">Raw data files:</span>
-                        <ul>
-                            <li><a class="file_link" id="link_beta">Beta projectors</a></li>
-                            <li><a class="file_link" id="link_econv">Energy Convergence</a></li>
-                            <li><a class="file_link" id="link_pwave">Partial waves</a></li>
-                        </ul>
-                    </li>
-                    <li title='Source files for custom plots'>
-                        <span class="li_header">Plotting files:</span><br>
-                        <span class="note">(note: the Gnuplot file requires all raw data files to be in the same folder)</span>
-                        <ul>
-                            <li><a class="file_link" id="link_gnuplot">Gnuplot - all</a></li>
-                            <li><a class="file_link" id="link_grace_beta">Grace - beta projectors</a></li>
-                            <li><a class="file_link" id="link_grace_econv">Grace - energy convergence</a></li>
-                            <li><a class="file_link" id="link_grace_pwave">Grace - partial waves</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+            <div class="pspot_infobox">
+                <a class="help_link" href="help/help.html">[?]</a>
+                <div class="info_header">
+                    <span class="info-element">{{ element.name }}</span>&nbsp;-&nbsp;
+                    <span class="info-name">{{ pspot[library].file }}</span>
+                </div>
+                <div class="info_libchoose">
+                Choose library:&nbsp;
+                <select id="lib_choose_select" v-model="library">
+                    <option v-for="(pp, lib) in pspot" v-bind:value="(lib == 'deflib'? element.deflib : lib)">
+                        {{ (lib == 'deflib'? "Default" : lib) }}</option>
+                </select>
+                </div>
+                <div class="info_main">
+                    <ul>
+                        <li><span class="li_header">Basic info:</span>
+                        <dl class="inline">
+                            <dt title='number of electrons left free to act as "valence" for the pseudopotential'>
+                            Ionic charge:</dt>
+                            <dd id="info_ion_charge"> {{ pspot[library].ionic_charge }} </dd>
+                            <dt title='exchange-correlation functional used for the calculation of the pseudopotential'>
+                            XC functional:</dt>
+                            <dd id="info_xc">  {{ pspot[library].xc }} </dd>
+                            <dt title='solver method employed to calculate the potential in the free atom.
+                                       CASTEP’s default is the scalar-relativistic method of Koelling and Harmon.'>Solver:</dt>
+                            <dd id="info_solver">  {{ pspot[library].solver }} </dd>
+                        </dl>
+                        </li>
+                        <li title="This table contains the suggested energy cutoffs for calculations using the given pseudopotential for different levels of precision, with descriptive names ranging from _COARSE_ to _EXTREME_.
+                            When planning for a new calculation, a good estimate for the cutoff to use is, once you've decided on one of these levels, to pick the highest value from all the pseudopotentials that you're going to use."><span class="li_header">Cutoffs (eV):</span>
+                            <table>
+                                <tr class="tr_header">
+                                    <td>COARSE</td>
+                                    <td>MEDIUM</td>
+                                    <td>FINE</td>
+                                    <td>EXTREME</td>
+                                </tr>
+                                <tr>
+                                    <td id="cut_val_coarse">{{ pspot[library].cutoffs.COARSE }}</td>
+                                    <td id="cut_val_medium">{{ pspot[library].cutoffs.MEDIUM }}</td>
+                                    <td id="cut_val_fine">{{ pspot[library].cutoffs.FINE }}</td>
+                                    <td id="cut_val_extreme">{{ pspot[library].cutoffs.EXTREME }}</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li title='This string is the descriptor that contains all the parameters CASTEP needs to rebuild the potential, and it can be inserted in the SPECIES_POT block of a .cell file.'>
+                            <span class="li_header">Pseudopotential string:</span><br>
+                            <span id="pspot_line">{{ pspot[library].pspot_string }}</span>
+                        </li>
+                        <li title='States occupied by the valence electrons in the all electron solution of the atom expressed as hydrogenlike orbitals'>
+                            <span class="li_header">Valence electronic structure:</span>
+                            <span id="info_elstruct" v-html="elecStructure()"></span>
+                        </li>
+                        <li id="delta_test" v-if="pspot[library].delta" title='Results of the Delta test, assessing the accuracy of pseudopotentials used in ab initio codes against an established standard'>
+                            <span class="li_header">Delta test results</span><br>
+                            <span class="note">(for more info about the Delta test check the website of the <a target="_blank" href="https://molmod.ugent.be/deltacodesdft">Center of Molecular Modeling</a>)</span>
+                            <table id="delta_test_table">
+                                <tr class="tr_header">
+                                    <td>&Delta;-value (mEV/atom)</td>
+                                    <td>&Delta;-value (%)</td>
+                                    <td>&Delta;<sub>1</sub></td>
+                                </tr>
+                                <tr>
+                                    <td id="delta_d"></td>
+                                    <td id="delta_dr"></td>
+                                    <td id="delta_d1"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li title='Select which plot to visualize here.
+                                   * Energy convergence: calculated energy of the isolated, spherical atom vs. the cutoff used
+                                   * Beta projectors: projector functions of the non-local pseudopotential classified by momentum channel
+                                   * Partial waves: full (dashed lines) and pseudised (continuous) versions of the electronic wavefunctions corresponding to the beta projectors'>
+                            <span class="li_header">Plotted data:</span>
+                            <select id="plot_data_select" v-model="active_plot">
+                                <option value="econv">Energy convergence</option>
+                                <option value="beta">Beta projectors</option>
+                                <option value="pwave">Partial waves</option>
+                            </select>
+                        </li>
+                        <li title='Details of the projectors'>
+                            <span class="li_header">Projector details</span>
+                            <table id="beta_proj_table">
+                                <tr class="tr_header">
+                                    <td title="Projector index">Beta</td>
+                                    <td title="Angular momentum">l</td>
+                                    <td title="Energy">E (eV)</td>
+                                    <td title="Cutoff radius">Rc (Ang)</td>
+                                    <td title="Pseudisation scheme">Scheme</td>
+                                    <td title="Type of the given projector. N = Norm-Conserving, U = Ultrasoft">Type</td>
+                                    <td title="Color used in plots">Legend</td>
+                                </tr>
+                                <tr v-for="(row, i) in pspot[library].pseudopotential_definition">
+                                    <td>{{ row.beta }}</td>
+                                    <td>{{ row.l }}</td>
+                                    <td>{{ row.energy.toFixed(2) }}</td>
+                                    <td>{{ row.Rc.toFixed(2) }}</td>
+                                    <td>{{ row.scheme }}</td>
+                                    <td>{{ row.norm ? 'N' : 'U' }}</td>
+                                    <td v-bind:class="'legend_col_' + getProjLegendCol(i)">&#9632;</td>
+                                </tr>
+                            </table>
+                        </li>
+<!--                         <li title='Downloadable ASCII data files used to build plots'>
+                            <span class="li_header">Raw data files:</span>
+                            <ul>
+                                <li><a class="file_link" id="link_beta">Beta projectors</a></li>
+                                <li><a class="file_link" id="link_econv">Energy Convergence</a></li>
+                                <li><a class="file_link" id="link_pwave">Partial waves</a></li>
+                            </ul>
+                        </li>
+                        <li title='Source files for custom plots'>
+                            <span class="li_header">Plotting files:</span><br>
+                            <span class="note">(note: the Gnuplot file requires all raw data files to be in the same folder)</span>
+                            <ul>
+                                <li><a class="file_link" id="link_gnuplot">Gnuplot - all</a></li>
+                                <li><a class="file_link" id="link_grace_beta">Grace - beta projectors</a></li>
+                                <li><a class="file_link" id="link_grace_econv">Grace - energy convergence</a></li>
+                                <li><a class="file_link" id="link_grace_pwave">Grace - partial waves</a></li>
+                            </ul>
+                        </li> -->
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- This one acts as a link -->
@@ -172,25 +172,12 @@ Please refer to the file COPYING for the text of the license
             &lt; Back
         </a>
 
-    	<script>
+        <script type="text/javascript">
 
-     		$(document).ready(function() {
-                // First load the relevant information
+            $(document).ready(function() {
+                initPseudopotentialGraph('#main-app');
+            });
 
-                var pspot_files;
-
-                $.when(
-                    $.getJSON("pspot_data.json", function(data) {
-                        pspot_files = data;
-                        console.log("Pseudopotential file list loaded");                 
-                    })
-                ).then(function() {
-                    // Let's load the specific pseudopotential
-                    var pPage = new PspotPage(pspot_files);
-                });
-
-    		});
-
-    	</script>
+        </script>
     </body>
 </html>	

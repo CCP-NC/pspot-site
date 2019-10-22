@@ -187,14 +187,13 @@ dl.inline dt{
     border-color: #000000;
 }
 
-.info_box .info_name {
+.info_box .info-name {
 
     position: relative;
 
     text-align: center;
     margin: 15px;
 
-    font-size: 30pt;
     font-weight: bold;
 
 }
@@ -367,17 +366,17 @@ dl.inline dt{
     bottom: auto;
 }
 
-.pspot_infobox .info_element {
+.pspot_infobox .info-element {
 
     font-weight: bold;
-    font-size: 40pt;
+    font-size: 1.3em;
 
 }
 
-.pspot_infobox .info_name {
+.pspot_infobox .info-name {
 
     font-weight: bold;
-    font-size: 30pt;
+    font-size: 1em;
 
 }
 
