@@ -44,6 +44,7 @@ class USPpspot(object):
         elre = re.compile("Element:\\s+([A-Za-z]+) ")
         icre = re.compile("Ionic charge:\\s+([0-9.]+) ")
         xcre = re.compile("Level of theory:\\s+([A-Za-z0-9\\-]+) ")
+        solre = re.compile("Atomic Solver:\\s+([A-Za-z0-9\\-]+) ")
 
         # Finally, the pseudpotential string. This is a bit harder to identify
         pspotsre = re.compile("\"([0-9a-zA-Z.,:|()=+\-{}]+)(?:\[.*\])*\"")        
@@ -66,6 +67,10 @@ class USPpspot(object):
             xc = xcre.findall(l)
             if len(xc) > 0:
                 self.xc = xc[0]
+
+            sol = solre.findall(l)
+            if len(sol) > 0:
+                self.sol = sol[0]
 
             # Pseudopotential strings can go to the next line!
             qc = l.count('"')
@@ -122,6 +127,7 @@ class USPpspot(object):
                 'ionic_charge': self.ion_charge,
                 'cutoffs': self.cutoffs,
                 'xc': self.xc,
+                'solver': self.sol,
                 'electronic_structure': self.elec_struct,
                 'pseudopotential_definition': self.pspot_def,
                 'pspot_string': self.pspot_string}
