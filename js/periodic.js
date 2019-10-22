@@ -3,6 +3,7 @@ function initPeriodicTable(el) {
         $.getJSON("pspot_data.json", function(data) {
             pspot_files = data;
             console.log("Pseudopotential file list loaded");                 
+            console.log(pspot_files);
         }),
         $.getJSON("data/periodic_table/data_tabulated.json", function(data) {
             periodic_table = {}

@@ -46,7 +46,7 @@ class USPpspot(object):
         xcre = re.compile("Level of theory:\\s+([A-Za-z0-9\\-]+) ")
 
         # Finally, the pseudpotential string. This is a bit harder to identify
-        pspotsre = re.compile("\"([0-9a-zA-Z.,:|()=+{}]+)(?:\[\])*\"")
+        pspotsre = re.compile("\"([0-9a-zA-Z.,:|()=+\-{}]+)(?:\[.*\])*\"")        
 
         for i, l in enumerate(comment_block):
             # Identify cutoffs
@@ -67,9 +67,18 @@ class USPpspot(object):
             if len(xc) > 0:
                 self.xc = xc[0]
 
-            psstr = pspotsre.findall(l)
-            if len(psstr) > 0:
-                self.pspot_string = psstr[0]
+            # Pseudopotential strings can go to the next line!
+            qc = l.count('"')
+            if qc == 2:
+                psstr = pspotsre.findall(l)
+                if len(psstr) > 0:
+                    self.pspot_string = psstr[0]
+            elif qc == 1 and not hasattr(self, 'pspot_string'):
+                psstr = (l.rsplit('|', 1)[0].strip() + 
+                         comment_block[i+1].split('|', 1)[1].strip())
+                psstr = pspotsre.findall(psstr)
+                if len(psstr) > 0:
+                    self.pspot_string = psstr[0]                
 
             # Match the more complex stuff
             if 'Reference Electronic Structure' in l:
@@ -91,7 +100,7 @@ class USPpspot(object):
                         break 
 
                     self.pspot_def.append({'beta': lspl[1],
-                                           'l': 'spdf'[int(lspl[2])],
+                                           'l': 'spdfghi'[int(lspl[2])],
                                            'energy': float(lspl[3])*_Ha2eV,
                                            'Rc': float(lspl[4])*_au2Ang,
                                            'scheme': lspl[5],

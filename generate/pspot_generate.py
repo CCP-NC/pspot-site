@@ -37,6 +37,8 @@ parser.add_argument('-grbin', type=str, default='xmgrace',
                     help='Command to run xmgrace binary')
 parser.add_argument('-graphs', type=str, default='graphs',
                     help='Folder to save graphs')
+parser.add_argument('-reusepng', action='store_true', default=False,
+                    help='If true, do not regenerate graphs that are already found')
 parser.add_argument('-deflib', type=str, default=None,
                     help='Default library (when present)')
 parser.add_argument('-json', type=str, default='pspot_data.json',
@@ -147,33 +149,39 @@ for lib, libdata in pspotcalc.items():
         betain = uspf.replace('usp', 'beta')
         betaout = os.path.join(args.graphs,
                                '{0}_{1}_beta.png'.format(lib, el))
-        proc = sp.Popen([args.grbin, '-nxy', betain, '-hdevice', 'PNG',
-                         '-hardcopy', '-printfile',
-                         os.path.join(abspath, '..', betaout)],
-                        stdout=sp.PIPE, stderr=sp.PIPE)
-        out, err = proc.communicate()
+        if not (args.reusepng and os.path.isfile(os.path.join(abspath,
+                                                          '..', betaout))):
+            proc = sp.Popen([args.grbin, '-nxy', betain, '-hdevice', 'PNG',
+                             '-hardcopy', '-printfile',
+                             os.path.join(abspath, '..', betaout)],
+                            stdout=sp.PIPE, stderr=sp.PIPE)
+            out, err = proc.communicate()
 
         data['beta_png'] = betaout
 
         econvin = uspf.replace('usp', 'econv')
         econvout = os.path.join(args.graphs,
-                               '{0}_{1}_econv.png'.format(lib, el))
-        proc = sp.Popen([args.grbin, '-nxy', econvin, '-hdevice', 'PNG',
-                         '-hardcopy', '-printfile',
-                         os.path.join(abspath, '..', econvout)],
-                        stdout=sp.PIPE, stderr=sp.PIPE)
-        out, err = proc.communicate()
+                                '{0}_{1}_econv.png'.format(lib, el))
+        if not (args.reusepng and os.path.isfile(os.path.join(abspath,
+                                                          '..', econvout))):
+            proc = sp.Popen([args.grbin, '-nxy', econvin, '-hdevice', 'PNG',
+                             '-hardcopy', '-printfile',
+                             os.path.join(abspath, '..', econvout)],
+                            stdout=sp.PIPE, stderr=sp.PIPE)
+            out, err = proc.communicate()
 
         data['econv_png'] = econvout
 
         pwavein = uspf.replace('usp', 'pwave')
         pwaveout = os.path.join(args.graphs,
-                               '{0}_{1}_pwave.png'.format(lib, el))
-        proc = sp.Popen([args.grbin, '-nxy', pwavein, '-hdevice', 'PNG',
-                         '-hardcopy', '-printfile',
-                         os.path.join(abspath, '..', pwaveout)],
-                        stdout=sp.PIPE, stderr=sp.PIPE)
-        out, err = proc.communicate()
+                                '{0}_{1}_pwave.png'.format(lib, el))
+        if not (args.reusepng and os.path.isfile(os.path.join(abspath,
+                                                          '..', pwaveout))):
+            proc = sp.Popen([args.grbin, '-nxy', pwavein, '-hdevice', 'PNG',
+                             '-hardcopy', '-printfile',
+                             os.path.join(abspath, '..', pwaveout)],
+                            stdout=sp.PIPE, stderr=sp.PIPE)
+            out, err = proc.communicate()
 
         data['pwave_png'] = pwaveout
 
