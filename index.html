@@ -47,6 +47,10 @@ Please refer to the file COPYING for the text of the license
     </head>
     <body class="dark">
 
+        <div class="title-bar">
+            The CASTEP Pseudopotential Library
+        </div>
+
         <div id="main-app" v-cloak>
             <div class="periodic_table">
                 <div class="elem" v-for="e in ptable" v-if="e.subTable == 'Main'"
@@ -74,7 +78,7 @@ Please refer to the file COPYING for the text of the license
                 </div>
             </div>
 
-            <div class="info_box" v-bind:style="{'border-color': '#' + ptable[selected].cpkHexColor}">
+            <div class="info-box" v-bind:style="{'border-color': '#' + ptable[selected].cpkHexColor}">
                 <span class="info-name">{{ptable[selected].name}}</span>
                 <div>
                     <div class="info_main">
@@ -95,6 +99,14 @@ Please refer to the file COPYING for the text of the license
                         No pseudopotential files available for this element.
                     </div>
                 </div>  
+                <div class="info-box-footer">
+                    <p>
+                        Site developed by Simone Sturniolo for <a href="https://www.ccpnc.ac.uk" target="_blank">CCP-NC</a>
+                    </p>
+                    <p>
+                        Makes use of <a href="https://vuejs.org" target="_blank">Vue.js</a>
+                    </p>
+                </div>
                 <a class="help_link" href="help.html">
                 [?]
                 </a>
