@@ -19,6 +19,10 @@ body.light {
     background-color: #dddddd;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 a {
     font-weight: bold;
     text-decoration: none;  
@@ -242,7 +246,7 @@ dl.inline dt{
     background-color: #dddddd;
 }
 
-.dark_screen {
+.dark-screen {
     position: fixed;
     top: 0;
     left: 0;
@@ -251,11 +255,9 @@ dl.inline dt{
     z-index: 1;
 
     background-color: rgba(0, 0, 0, 0.5);
-
-    visibility: hidden;
 }
 
-.white_box {
+.white-box {
     position: fixed;
     top: 0;
     left: 15%;
@@ -268,7 +270,7 @@ dl.inline dt{
 
 }
 
-.pspot_list_table {
+.pspot-list-table {
     position: absolute;
 
     top: 5%;
@@ -279,11 +281,11 @@ dl.inline dt{
 
 }
 
-.pspot_list_table thead {
+.pspot-list-table thead {
     font-weight: bold;
 }
 
-.pspot_list_table td {
+.pspot-list-table td {
     height: 20pt;
     font-size: 15pt;
 
@@ -292,6 +294,16 @@ dl.inline dt{
 
     border-style: solid;
 
+}
+
+.close-button {
+    cursor: pointer;
+    font-weight: bold;
+    color: #0022ee;
+    font-size: 1.3em;
+    margin: 5px;
+    position: absolute;
+    right: 0;
 }
 
 .pspot_main_plot {

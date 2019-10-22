@@ -19,6 +19,7 @@ function initPeriodicTable(el) {
                 ptable: periodic_table,
                 pspot: pspot_files,
                 selected: 'H',
+                show_table: false,
             },
             methods: {
                 getGroupColor: function(el) {
@@ -40,6 +41,14 @@ function initPeriodicTable(el) {
                 },
                 select: function(el) {
                     this.selected = el.symbol;
+                },
+                tableShow: function() {
+                    if (this.pspot[this.selected]) {
+                        this.show_table = true;
+                    }
+                },
+                tableHide: function() {
+                    this.show_table = false;
                 }
             }
         });

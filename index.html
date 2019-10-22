@@ -24,11 +24,11 @@ Please refer to the file COPYING for the text of the license
 
         <!-- JS Libraries -->
         <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-        <script src="lib/d3/d3.min.js"></script>
         <script src="lib/vue.min.js"></script>
 
         <!-- Source code files -->
         <script src="js/periodic.js"></script>
+        <script src="js/url_params.js"></script>
 
 <!--         <script src="js/periodic_table.js"></script>
         <script src="js/resizing.js"></script>
@@ -47,7 +47,7 @@ Please refer to the file COPYING for the text of the license
     </head>
     <body class="dark">
 
-        <div id="main-app">
+        <div id="main-app" v-cloak>
             <div class="periodic_table">
                 <div class="elem" v-for="e in ptable" v-if="e.subTable == 'Main'"
                 v-bind:style="{'background-color': getGroupColor(e), 
@@ -87,7 +87,7 @@ Please refer to the file COPYING for the text of the license
                         <span id="info_pspot_nodefault" class="not_found" v-else>No default found.</span>
                         <br>
                         <br>
-                        <div class="pspot_list_show divbutton">Show all</div>
+                        <div class="pspot_list_show divbutton" v-on:click="tableShow()">Show all</div>
                     </div>
                     <div id="info_nopspot" class="not_found" v-if="!pspot[selected]">
                         No pseudopotential files available for this element.
@@ -97,27 +97,31 @@ Please refer to the file COPYING for the text of the license
                 [?]
                 </a>
             </div>
+
+            <div class="dark-screen" v-if="show_table" v-cloak>
+                <div class="white-box" onclick="(function(e) {e.stopPropagation();})(event)">
+                    <table class="pspot-list-table">
+                        <thead>
+                            <tr><td>Pseudopotential name</td><td>Description</td><td>Cutoff (eV, FINE quality)</td><td>XC functional</td></tr>
+                        </thead>
+                        <tbody>                     
+                            <tr v-for="(pp, lib) in pspot[selected]" v-if="lib != 'deflib'">
+                                <td><a v-bind:href="makeUrl('pspot.html', {'lib': lib, 'el': selected})">{{ lib }}</a></td><td> {{ pspot.descriptions[lib] }} </td>
+                                <td>{{ pp.cutoffs['FINE'] }}</td><td> {{ pp.xc }} </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="close-button" v-on:click="tableHide()">X</div>
+                </div>
+            </div>
+
         </div>
 
-<!--         <div class="dark_screen">
-            <div class="white_box" onclick="(function(e) {e.stopPropagation();})(event)">
-                <table class="pspot_list_table">
-                    <thead>
-                        <tr><td>Pseudopotential name</td><td>Cutoff (eV, FINE quality)</td><td>XC functional</td></tr>
-                    </thead>
-                    <tbody>                     
-                        <tr><td><a href="test.html">Test</a></td><td>300</td><td>LDA</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
- -->
         <script type="text/javascript">
 
             $(document).ready(function() {
                 initPeriodicTable('#main-app');
             });
-
 
         </script>
     </body>
